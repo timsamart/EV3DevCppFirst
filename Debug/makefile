@@ -56,7 +56,7 @@ all: test.elf secondary-outputs
 test.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-linux-gnueabi-g++ -mcpu=arm926ej-s -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -Xlinker --gc-sections -Wl,-Map,"test.map" -o "test.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-linux-gnueabi-g++ -mcpu=arm1026ej-s -mthumb -O2  -g -Wl,-Map,"test.map" -o "test.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

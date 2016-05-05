@@ -25,9 +25,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+#include <thread>
+#include <mutex>
+
 #include "ev3dev.h"
 
-#include <thread>
 #include <chrono>
 #include <iostream>
 #include <fstream>
@@ -51,19 +53,34 @@ public:
 	Control();
 	virtual ~Control();
 
-	void driveprimitive();
-	void drive(int speed, int time);
-	void stop();
-	void reset();
+	std::mutex m_screen; // ENSURE THREAD SAFETY
 
-	bool initialized() const;
-	void terminate() { _terminate = true; };
+	void msg(char const * const message); // Thread safe cout replacement
+	void msg(char const * const message, int const &value); // Thread safe cout replacement for numericals
+
+	void driveprimitive(); // Primitve function for demonstration of driving a motor on Port A
+	void drive(int speed, int time); // less PRimitev driveprimitive()
+	void stop(); // stop the motor
+	void reset(); // reset the motor
+
+	//Threads
+	void sensorRead(); // couts sensor readings from the sonic sensor
+
+	int readmotor(); // get motorstatus
+
+	bool initialized(int ID) const; // returns current connection status of the Motor Slots A=0, B=1, C=2, D=3 and the Sensor Slots 1=4, 2=5, 3=6, 4=7
+	void terminate() { _terminate = true; }; // Terminates the program
 
 protected:
-  large_motor     _motor_A;
-  large_motor     _motor_B;
-  large_motor     _motor_C;
-  large_motor     _motor_D;
+  large_motor	_motor_A;
+  large_motor	_motor_B;
+  large_motor	_motor_C;
+  large_motor	_motor_D;
+
+  sensor		_sensor_A;
+  sensor		_sensor_B;
+  sensor		_sensor_C;
+  sensor		_sensor_D;
 
   enum state
   {
