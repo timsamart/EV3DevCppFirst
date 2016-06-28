@@ -1,11 +1,8 @@
-/*
- * Control.h
+/*============================================================================
+ * Name        : Control.h
+ * Author      : Timotheos Samartzidis
+ * Version     : 1
  *
- *  Created on: 16.04.2016
- *      Author: Chrysanth
- */
-
-/*
  * Copyright (c) 2016 - Timotheos Samartzidis
  *
  * Program for Motor Control loosely based on Franz Detro's Motor Control program

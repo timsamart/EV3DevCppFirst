@@ -772,7 +772,7 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
                 0x00014c10                PROVIDE (_etext, .)
                 0x00014c10                PROVIDE (etext, .)
 
-.rodata         0x00014c10      0xaf0
+.rodata         0x00014c10      0xaf8
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.cst4   0x00014c10        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
                 0x00014c10                _IO_stdin_used
@@ -840,265 +840,265 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
                                 0x658 (size before relaxing)
  *fill*         0x000156b3        0x1 
  .rodata.str1.4
-                0x000156b4       0x4c ./src/main.o
-                                 0x80 (size before relaxing)
+                0x000156b4       0x54 ./src/main.o
+                                 0x88 (size before relaxing)
 
 .rodata1
  *(.rodata1)
 
-.ARM.extab      0x00015700     0x1024
+.ARM.extab      0x00015708     0x1024
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00015700        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
- .ARM.extab     0x00015700       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .ARM.extab     0x00015708        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .ARM.extab     0x00015708       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x00015724        0xc ./src/Control.o
+                0x0001572c        0xc ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00015730        0x0 ./src/Control.o
- .ARM.extab     0x00015730      0x1c0 ./src/Control.o
+                0x00015738        0x0 ./src/Control.o
+ .ARM.extab     0x00015738      0x1c0 ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x000158f0        0x0 ./src/Control.o
+                0x000158f8        0x0 ./src/Control.o
  .ARM.extab.text.unlikely
-                0x000158f0        0xc ./src/Control.o
+                0x000158f8        0xc ./src/Control.o
  .ARM.extab.text._ZNSt6thread10_Impl_baseD2Ev
-                0x000158fc        0x0 ./src/Control.o
+                0x00015904        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt6thread10_Impl_baseD0Ev
-                0x000158fc        0x0 ./src/Control.o
+                0x00015904        0x0 ./src/Control.o
  .ARM.extab.text._ZN6ev3dev6sensorD2Ev
-                0x000158fc        0x0 ./src/Control.o
+                0x00015904        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
-                0x000158fc        0x0 ./src/Control.o
+                0x00015904        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
-                0x000158fc        0xc ./src/Control.o
+                0x00015904        0xc ./src/Control.o
  .ARM.extab.text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
-                0x00015908        0xc ./src/Control.o
+                0x00015910        0xc ./src/Control.o
  .ARM.extab.text.startup
-                0x00015914        0x0 ./src/Control.o
+                0x0001591c        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00015914        0x0 ./src/ev3dev.o
+                0x0001591c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE14_M_get_deleterERKSt9type_info
-                0x00015914        0x0 ./src/ev3dev.o
+                0x0001591c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x00015914        0x0 ./src/ev3dev.o
+                0x0001591c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x00015914        0xc ./src/ev3dev.o
+                0x0001591c        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIfSaIfEED2Ev
-                0x00015920        0x0 ./src/ev3dev.o
+                0x00015928        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EED2Ev
-                0x00015920        0x0 ./src/ev3dev.o
+                0x00015928        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev6buttonD2Ev
-                0x00015920        0xc ./src/ev3dev.o
+                0x00015928        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
-                0x0001592c        0xc ./src/ev3dev.o
+                0x00015934        0xc ./src/ev3dev.o
  .ARM.extab.text.unlikely
-                0x00015938        0xc ./src/ev3dev.o
+                0x00015940        0xc ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev12power_supplyD2Ev
-                0x00015944        0x0 ./src/ev3dev.o
+                0x0001594c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev3ledD2Ev
-                0x00015944        0x0 ./src/ev3dev.o
+                0x0001594c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev
-                0x00015944        0x0 ./src/ev3dev.o
+                0x0001594c        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
-                0x00015944        0x0 ./src/ev3dev.o
- .ARM.extab     0x00015944      0xb14 ./src/ev3dev.o
+                0x0001594c        0x0 ./src/ev3dev.o
+ .ARM.extab     0x0001594c      0xb14 ./src/ev3dev.o
  .ARM.extab.text._ZNSt12system_errorC2ESt10error_code
-                0x00016458       0x18 ./src/ev3dev.o
+                0x00016460       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt12system_errorC2ESt10error_codeRKSs
-                0x00016470       0x34 ./src/ev3dev.o
+                0x00016478       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt4pairIKSsS0_ED2Ev
-                0x000164a4        0x0 ./src/ev3dev.o
+                0x000164ac        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
-                0x000164a4       0x18 ./src/ev3dev.o
+                0x000164ac       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
-                0x000164bc       0x18 ./src/ev3dev.o
+                0x000164c4       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
-                0x000164d4       0x18 ./src/ev3dev.o
+                0x000164dc       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNKSt8functionIFvbEEclEb
-                0x000164ec        0xc ./src/ev3dev.o
+                0x000164f4        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
-                0x000164f8        0x0 ./src/ev3dev.o
+                0x00016500        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
-                0x000164f8        0x0 ./src/ev3dev.o
+                0x00016500        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
-                0x000164f8        0xc ./src/ev3dev.o
+                0x00016500        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00016504        0xc ./src/ev3dev.o
+                0x0001650c        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
-                0x00016510        0x0 ./src/ev3dev.o
+                0x00016518        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00016510        0xc ./src/ev3dev.o
+                0x00016518        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
-                0x0001651c        0x0 ./src/ev3dev.o
+                0x00016524        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
-                0x0001651c        0x0 ./src/ev3dev.o
+                0x00016524        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
-                0x0001651c        0xc ./src/ev3dev.o
+                0x00016524        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
-                0x00016528       0x2c ./src/ev3dev.o
+                0x00016530       0x2c ./src/ev3dev.o
  .ARM.extab.text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
-                0x00016554       0x1c ./src/ev3dev.o
+                0x0001655c       0x1c ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
-                0x00016570       0x4c ./src/ev3dev.o
+                0x00016578       0x4c ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
-                0x000165bc       0x34 ./src/ev3dev.o
+                0x000165c4       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x000165f0       0x34 ./src/ev3dev.o
+                0x000165f8       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x00016624       0x2c ./src/ev3dev.o
+                0x0001662c       0x2c ./src/ev3dev.o
  .ARM.extab.text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
-                0x00016650        0x0 ./src/ev3dev.o
+                0x00016658        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
-                0x00016650        0xc ./src/ev3dev.o
+                0x00016658        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x0001665c        0xc ./src/ev3dev.o
+                0x00016664        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016668        0xc ./src/ev3dev.o
+                0x00016670        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00016674        0xc ./src/ev3dev.o
+                0x0001667c        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016680        0xc ./src/ev3dev.o
+                0x00016688        0xc ./src/ev3dev.o
  .ARM.extab.text.startup
-                0x0001668c       0x50 ./src/ev3dev.o
+                0x00016694       0x50 ./src/ev3dev.o
  .ARM.extab.text.startup
-                0x000166dc       0x30 ./src/main.o
- .ARM.extab     0x0001670c       0x18 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
- .ARM.extab     0x00016724        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
-                0x00016724                PROVIDE (__exidx_start, .)
+                0x000166e4       0x30 ./src/main.o
+ .ARM.extab     0x00016714       0x18 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+ .ARM.extab     0x0001672c        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x0001672c                PROVIDE (__exidx_start, .)
 
-.ARM.exidx      0x00016724      0x4a8
+.ARM.exidx      0x0001672c      0x4a8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00016754        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
- .ARM.exidx     0x0001675c       0x20 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .ARM.exidx     0x0001675c        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .ARM.exidx     0x00016764       0x20 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x0001680c        0x8 ./src/Control.o
- .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
                 0x00016814        0x8 ./src/Control.o
- .ARM.exidx     0x0001677c       0x90 ./src/Control.o
+ .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
+                0x0001681c        0x8 ./src/Control.o
+ .ARM.exidx     0x00016784       0x90 ./src/Control.o
                                  0x98 (size before relaxing)
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x0001681c        0x8 ./src/Control.o
- .ARM.exidx.text.unlikely
-                0x00016724        0x8 ./src/Control.o
- .ARM.exidx.text._ZNSt6thread10_Impl_baseD2Ev
                 0x00016824        0x8 ./src/Control.o
+ .ARM.exidx.text.unlikely
+                0x0001672c        0x8 ./src/Control.o
+ .ARM.exidx.text._ZNSt6thread10_Impl_baseD2Ev
+                0x0001682c        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt6thread10_Impl_baseD0Ev
-                0x0001682c        0x0 ./src/Control.o
+                0x00016834        0x0 ./src/Control.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN6ev3dev6sensorD2Ev
-                0x0001682c        0x8 ./src/Control.o
- .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
                 0x00016834        0x8 ./src/Control.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
+ .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
                 0x0001683c        0x8 ./src/Control.o
- .ARM.exidx.text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
                 0x00016844        0x8 ./src/Control.o
+ .ARM.exidx.text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
+                0x0001684c        0x8 ./src/Control.o
  .ARM.exidx.text.startup
-                0x00016734        0x8 ./src/Control.o
+                0x0001673c        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00016a3c        0x8 ./src/ev3dev.o
+                0x00016a44        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE14_M_get_deleterERKSt9type_info
-                0x00016a44        0x0 ./src/ev3dev.o
+                0x00016a4c        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x00016a44        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
                 0x00016a4c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt6vectorIfSaIfEED2Ev
+ .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
                 0x00016a54        0x8 ./src/ev3dev.o
+ .ARM.exidx.text._ZNSt6vectorIfSaIfEED2Ev
+                0x00016a5c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EED2Ev
-                0x00016a5c        0x0 ./src/ev3dev.o
+                0x00016a64        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN6ev3dev6buttonD2Ev
-                0x00016a5c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
                 0x00016a64        0x8 ./src/ev3dev.o
- .ARM.exidx.text.unlikely
-                0x0001672c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZN6ev3dev12power_supplyD2Ev
+ .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
                 0x00016a6c        0x8 ./src/ev3dev.o
+ .ARM.exidx.text.unlikely
+                0x00016734        0x8 ./src/ev3dev.o
+ .ARM.exidx.text._ZN6ev3dev12power_supplyD2Ev
+                0x00016a74        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZN6ev3dev3ledD2Ev
-                0x00016a74        0x0 ./src/ev3dev.o
+                0x00016a7c        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev
-                0x00016a74        0x0 ./src/ev3dev.o
+                0x00016a7c        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
-                0x00016a74        0x0 ./src/ev3dev.o
+                0x00016a7c        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0001684c      0x1f0 ./src/ev3dev.o
+ .ARM.exidx     0x00016854      0x1f0 ./src/ev3dev.o
                                 0x200 (size before relaxing)
  .ARM.exidx.text._ZNSt12system_errorC2ESt10error_code
-                0x00016a74        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt12system_errorC2ESt10error_codeRKSs
                 0x00016a7c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt4pairIKSsS0_ED2Ev
+ .ARM.exidx.text._ZNSt12system_errorC2ESt10error_codeRKSs
                 0x00016a84        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
+ .ARM.exidx.text._ZNSt4pairIKSsS0_ED2Ev
                 0x00016a8c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
+ .ARM.exidx.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
                 0x00016a94        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
+ .ARM.exidx.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
                 0x00016a9c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNKSt8functionIFvbEEclEb
+ .ARM.exidx.text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
                 0x00016aa4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
+ .ARM.exidx.text._ZNKSt8functionIFvbEEclEb
                 0x00016aac        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
+ .ARM.exidx.text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
                 0x00016ab4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
+ .ARM.exidx.text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
                 0x00016abc        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
                 0x00016ac4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
                 0x00016acc        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
+ .ARM.exidx.text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
                 0x00016ad4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
                 0x00016adc        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
+ .ARM.exidx.text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
                 0x00016ae4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
+ .ARM.exidx.text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
                 0x00016aec        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
                 0x00016af4        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
                 0x00016afc        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
+ .ARM.exidx.text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
                 0x00016b04        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
                 0x00016b0c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
                 0x00016b14        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
                 0x00016b1c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
                 0x00016b24        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
+ .ARM.exidx.text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
                 0x00016b2c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
                 0x00016b34        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
                 0x00016b3c        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
                 0x00016b44        0x8 ./src/ev3dev.o
- .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
                 0x00016b4c        0x8 ./src/ev3dev.o
+ .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
+                0x00016b54        0x8 ./src/ev3dev.o
  .ARM.exidx.text.startup
-                0x0001673c        0x8 ./src/ev3dev.o
+                0x00016744        0x8 ./src/ev3dev.o
  .ARM.exidx.text.startup
-                0x00016744       0x10 ./src/main.o
- .ARM.exidx     0x00016b54       0x60 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+                0x0001674c       0x10 ./src/main.o
+ .ARM.exidx     0x00016b5c       0x60 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
                                 0x190 (size before relaxing)
- .ARM.exidx     0x00016bb4       0x18 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+ .ARM.exidx     0x00016bbc       0x18 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
                                  0x10 (size before relaxing)
-                0x00016bcc                PROVIDE (__exidx_end, .)
+                0x00016bd4                PROVIDE (__exidx_end, .)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x00016bcc        0x4
+.eh_frame       0x00016bd4        0x4
  *(.eh_frame)
- .eh_frame      0x00016bcc        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .eh_frame      0x00016bd4        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -1109,7 +1109,7 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
 
 .exception_ranges
  *(.exception_ranges .exception_ranges*)
-                0x00016bd0                . = (ALIGN (0x8000) - ((0x8000 - .) & 0x7fff))
+                0x00016bd8                . = (ALIGN (0x8000) - ((0x8000 - .) & 0x7fff))
                 0x0001f000                . = DATA_SEGMENT_ALIGN (0x8000, 0x1000)
 
 .eh_frame
@@ -1439,11 +1439,11 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
  .debug_abbrev  0x00001233     0x14a2 ./src/ev3dev.o
  .debug_abbrev  0x000026d5      0xc47 ./src/main.o
 
-.debug_line     0x00000000     0x73bf
+.debug_line     0x00000000     0x73bc
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000     0x179b ./src/Control.o
  .debug_line    0x0000179b     0x54e9 ./src/ev3dev.o
- .debug_line    0x00006c84      0x73b ./src/main.o
+ .debug_line    0x00006c84      0x738 ./src/main.o
 
 .debug_frame    0x00000000     0x197c
  *(.debug_frame)
