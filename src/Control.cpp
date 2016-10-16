@@ -36,115 +36,243 @@ Control::Control() :
   _sensor_B(INPUT_2),
   _sensor_C(INPUT_3),
   _sensor_D(INPUT_4),
-  _state(state_idle),
   _terminate(false)
 {
+	motors[0] = &_motor_A;
+	motors[1] = &_motor_B;
+	motors[2] = &_motor_C;
+	motors[3] = &_motor_D;
+	sensors[0] = &_sensor_A;
+	sensors[1] = &_sensor_B;
+	sensors[2] = &_sensor_C;
+	sensors[3] = &_sensor_D;
+	e.reset();
 }
 
 Control::~Control() {
 	// TODO Auto-generated destructor stub
-	reset();
+	resetAll();
 }
 
-void Control::msg(char const * const message)
+void Control::exit()
 {
-  m_screen.lock();
-  std::cout << message << std::endl;
-  m_screen.unlock();
+	intercom::msg("starting exit");
+	e.terminate = true;
+	intercom::msg("terminate launched");
+	t_buttons.join();
+	intercom::msg("button thread terminated!");
+	t_sensors.join();
+	intercom::msg("sensor thread terminated!");
+	t_motors.join();
+	intercom::msg("motor thread terminated!");
+	stopAll();
+	intercom::msg("motors stopped!");
 }
 
-void Control::msg(char const * const message, int const &value)
+void Control::sleep(int milliseconds)
 {
-  m_screen.lock();
-  std::cout << message << " = " << value << std::endl;
-  m_screen.unlock();
+	std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
 
-void Control::driveprimitive()
+void Control::initialize(bool _verbose, int ms)
 {
-	_motor_A.reset();
-	_motor_A.set_speed_sp(1050);
-	_motor_A.set_time_sp(2000);
-	_motor_A.run_timed();
-	while (_motor_A.state().count("running")) {
-	    	std::this_thread::sleep_for(std::chrono::milliseconds(10));
-	    }
+	verbose = _verbose;
+	checkDevices(true);
+	th_initButtonInput();
+	th_initSensorInput(ms);
+	th_initMotorStatus(ms);
 }
 
-void Control::drive(int speed, int time)
+void Control::drive(int ID, int speed, int timeinms, int rampupdownms)
 {
-  _motor_A.set_duty_cycle_sp(-speed);
-
-  _state = state_driving;
-
-  if (time > 0)
-  {
-    _motor_A.set_time_sp(time).run_timed();
-
-    while (_motor_A.state().count("running")) {
-    	std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    }
-
-    _state = state_idle;
-  }
-  else
-  {
-    _motor_A.run_forever();
-    std::cout << "Motor Runs now";
-  }
-}
-
-void Control::stop()
-{
-  _motor_A.stop();
-
-  _state = state_idle;
-}
-
-void Control::reset()
-{
-  if (_motor_A.connected())
-    _motor_A.reset();
-
-  _state = state_idle;
-}
-
-bool Control::initialized(int ID) const
-{
-  switch(ID)
-  {
-  case 0:{
-	  return (_motor_A.connected()); break;}
-  case 1:{
-  	  return (_motor_B.connected()); break;}
-  case 2:{
-  	  return (_motor_C.connected()); break;}
-  case 3:{
-  	  return (_motor_D.connected()); break;}
-  case 4:{
-  	  return (_sensor_A.connected()); break;}
-  case 5:{
-  	  return (_sensor_B.connected()); break;}
-  case 6:{
-  	  return (_sensor_C.connected()); break;}
-  case 7:{
-  	  return (_sensor_D.connected()); break;}
-  default:
-	  return false; break;
-  }
-}
-
-void Control::sensorRead()
-{
-	std::cout << "first: " << _sensor_A.value(0) << std::endl;
-	std::thread t;
-	t = std::thread([&] {
-		while (true) {
-			msg("Sonic Sensor Distance: ", _sensor_A.value(0)/10);
-			std::this_thread::sleep_for(std::chrono::milliseconds(300));
+	motors[ID]->reset();
+	motors[ID]->set_speed_sp(speed);
+	if(timeinms>0){
+		motors[ID]->set_time_sp(timeinms);
+		motors[ID]->run_timed();
+	}else{
+		if(rampupdownms>0){
+			motors[ID]->set_ramp_up_sp(rampupdownms);
+			motors[ID]->run_forever();
+		}else if(rampupdownms<0){
+			motors[ID]->set_ramp_down_sp(-rampupdownms);
+			motors[ID]->run_forever();
+		}else{
+			motors[ID]->run_forever();
 		}
-	}); // Lambda function for threading
-	t.join();
+	}
 }
 
+void Control::drive_ToPositionRelative(int ID, int position)
+{
+	intercom::msg("position in tachocounts ", motors[ID]->position());
+	intercom::msg("tachocounts ", motors[ID]->count_per_rot());
+	motors[ID]->set_position_sp(position);
+	motors[ID]->run_to_rel_pos();
+}
+
+void Control::drive_ToPositionAbsolute(int ID, int position)
+{
+	intercom::msg("position in tachocounts ", motors[ID]->position());
+	intercom::msg("tachocounts ", motors[ID]->count_per_rot());
+	motors[ID]->set_position_sp(position);
+	motors[ID]->run_to_abs_pos();
+}
+
+bool Control::stop(int ID)
+{
+	if (motors[ID]->connected())
+	{
+		motors[ID]->reset();
+		th_motorReadStatus(ID);
+		intercom::msg("Motor stopped ID ", ID);
+		return true;
+	}
+	return false;
+}
+
+void Control::stopAll(){
+	for(int i = 0; i < 4; i++)
+	{
+		stop(i);
+	}
+}
+
+bool Control::reset(int ID)
+{
+	if (motors[ID]->connected())
+	{
+		motors[ID]->reset();
+		th_motorReadStatus(ID);
+		return true;
+	}
+	return false;
+}
+
+void Control::resetAll(){
+	for(int i = 0; i < 4; i++)
+	{
+		reset(i);
+	}
+}
+
+void Control::checkDevices(bool _verbose)
+{
+	verbose = _verbose;
+	for(int i = 0; i < 4; i++)
+	{
+		if(motors[i]->connected())
+		{
+			if(verbose){
+				m_screen.lock();
+				std::cout << "Motor " << i << " ready!" << std::endl;
+				m_screen.unlock();
+			}
+			e.motorsInitialized[i] = true;
+		}
+		if(sensors[i]->connected())
+		{
+			if(verbose){
+				m_screen.lock();
+				std::cout << "Sensor " << i << " ready!" << std::endl;
+				m_screen.unlock();
+			}
+			e.sensorsInitialized[i] = true;
+			e.sensorType[i] = sensors[i]->driver_name();
+			intercom::msg("Sensor name: ", e.sensorType[i]);
+			intercom::msg("Sensor ID: ", i);
+		}
+	}
+}
+
+int Control::sensorGetValue(int ID) // gives ID 0 to 3
+{
+	m_sensors[ID].lock();
+	return(sensors[ID]->value(0));
+	m_sensors[ID].unlock();
+}
+// private functions
+void Control::th_motorReadStatus(int ID){
+	m_motors[ID].lock();
+	e.motorSpeed[ID] = motors[ID]->speed_sp();
+	if(motors[ID]->state().count("running"))
+		e.setMotorStatus(ID,"running");
+	else if(motors[ID]->state().count("ramping"))
+		e.setMotorStatus(ID,"ramping");
+	else if(motors[ID]->state().count("holding"))
+		e.setMotorStatus(ID,"holding");
+	else if(motors[ID]->state().count("stalled"))
+		e.setMotorStatus(ID,"stalled");
+	m_motors[ID].unlock();
+}
+
+void Control::th_sensorRead(int ID)
+{
+	m_sensors[ID].lock();
+	e.sensorsValues[ID] = sensors[ID]->value();
+	m_sensors[ID].unlock();
+}
+
+void Control::th_initMotorStatus(int ms)
+{
+	t_motors = std::thread([&] {
+		bool term = false;
+		while(!term){
+			term = e.getTerm(); // mutex lock to check if terminate initiated
+			for(int i = 0; i<4; i++){
+				if(e.motorsInitialized[i]){
+					th_motorReadStatus(i);
+				}
+			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		}
+	});
+}
+
+void Control::th_initSensorInput(int ms)
+{
+	t_sensors = std::thread([&] {
+		bool term = false;
+		while(!term){
+			term = e.getTerm(); // mutex lock to check if terminate initiated
+			for(int i = 0; i<4; i++){
+				if(e.sensorsInitialized[i]){
+					th_sensorRead(i);
+					//intercom::msg("sensor read", i);
+				}
+			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		}
+	});
+}
+
+void Control::th_initButtonInput(int ms)
+{
+	std::cout << "Start button input thread... " << std::endl;
+	t_buttons = std::thread([&] {
+		bool term = false;
+		while (!term)
+		{
+			term = e.getTerm(); // mutex lock to check if terminate initiated
+			e.m_buttons.lock(); //mutexlock
+			if(!e.b_up_c){if(button::up.pressed() != e.b_up){e.b_up_p = e.b_up;	e.b_up = button::up.pressed(); e.b_up_c = true;}}
+			if(!e.b_down_c){if(button::down.pressed() != e.b_down){e.b_down_p = e.b_down;	e.b_down = button::down.pressed(); e.b_down_c = true;}}
+			if(!e.b_left_c){if(button::left.pressed() != e.b_left){e.b_left_p = e.b_left;	e.b_left = button::left.pressed(); e.b_left_c = true;}}
+			if(!e.b_right_c){if(button::right.pressed() != e.b_right){e.b_right_p = e.b_right;	e.b_right = button::right.pressed(); e.b_right_c = true;}}
+			if(!e.b_enter_c){if(button::enter.pressed() != e.b_enter){e.b_enter_p = e.b_enter;	e.b_enter = button::enter.pressed(); e.b_enter_c = true;}}
+			if(!e.b_escape_c){if(button::back.pressed() != e.b_escape){e.b_escape_p = e.b_escape;	e.b_escape = button::back.pressed(); e.b_escape_c = true;}}
+			e.m_buttons.unlock();
+			// cout current buttons if pressed
+			/*if(_verbose){
+				intercom::msg("verbose is true");
+				m_screen.lock();
+				std::cout << "u " << e.b_up << "d " << e.b_down << "l " << e.b_left << "r " << e.b_right << "e " << e.b_enter << "p " << e.b_escape << std::endl;
+				m_screen.unlock();
+			}*/
+			//printf ("up:%d down:%d left:%d right:%d enter:%d esc:%d\n", up, down, left, right, enter, escape);
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		}
+	});
+	//tbutton.join();
+}
 } /* namespace ev3dev */

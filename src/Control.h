@@ -26,6 +26,8 @@
 #include <mutex>
 
 #include "ev3dev.h"
+#include "events.h"
+#include "ev3devextras.h"
 
 #include <chrono>
 #include <iostream>
@@ -50,23 +52,41 @@ public:
 	Control();
 	virtual ~Control();
 
-	std::mutex m_screen; // ENSURE THREAD SAFETY
+	large_motor* motors[4]; // motor array populated in init function Control()
+	sensor* sensors[4]; // sensor array populated in init function Control()
 
-	void msg(char const * const message); // Thread safe cout replacement
-	void msg(char const * const message, int const &value); // Thread safe cout replacement for numericals
+	events e; // events interface class for all events and input outputs of sensors and motors
 
-	void driveprimitive(); // Primitve function for demonstration of driving a motor on Port A
-	void drive(int speed, int time); // less PRimitev driveprimitive()
-	void stop(); // stop the motor
-	void reset(); // reset the motor
+	std::thread t_buttons; // thread for getting button inputs
+	std::thread t_sensors; // thread for reading value of sensor
+	std::thread t_motors; // thread for reading motors values
+
+	void initialize(bool verbose = false, int ms = 1000);
+
+	void drive(int ID, int speed = 1050, int timeinms=0, int rampupdown=0); // drive function multipurpose
+	void drive_ToPositionRelative(int ID, int position);
+	void drive_ToPositionAbsolute(int ID, int position);
+	bool stop(int ID); // stop the motor
+	void stopAll(); // stops all motors
+	bool reset(int ID); // reset the motor
+	void resetAll(); // resets all motors
 
 	//Threads
-	void sensorRead(); // couts sensor readings from the sonic sensor
+	int sensorGetValue(int ID);
 
-	int readmotor(); // get motorstatus
+	void checkDevices(bool verbose=false); // asses current connected devices
 
-	bool initialized(int ID) const; // returns current connection status of the Motor Slots A=0, B=1, C=2, D=3 and the Sensor Slots 1=4, 2=5, 3=6, 4=7
+	void sleep(int ms = 1000); // sleep main thread for so many milliseconds
 	void terminate() { _terminate = true; }; // Terminates the program
+	void exit(); // exit threads and cleanup
+
+private:
+	void th_initMotorStatus(int ms = 500);
+	void th_initButtonInput(int ms = 500); // thread to get button inputs
+	void th_initSensorInput(int ms = 500); // thread to get sensor inputs
+	void th_motorReadStatus(int ID); // reads motor Status to events
+	void th_sensorRead(int ID); // couts sensor readings from another sensor
+
 
 protected:
   large_motor	_motor_A;
@@ -79,14 +99,6 @@ protected:
   sensor		_sensor_C;
   sensor		_sensor_D;
 
-  enum state
-  {
-    state_idle,
-    state_driving,
-    state_turning
-  };
-
-  state _state;
   bool  _terminate;
 };
 

@@ -44,25 +44,41 @@
 
 using namespace ev3dev;
 
-int
-main()
+int main()
 {
-  Control c;
-  sound s;
-  if (c.initialized(0))
-    {
-	  s.beep();
-	  s.speak("Hello My name is Brick, Lego Brick!",true);
-	  std::cout << "Motor Control initialized" << std::endl;
-      //c.terminate_on_key(); // we terminate if a button is pressed
-	  c.driveprimitive();
-	  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-	  c.sensorRead();
-    }
+	Control c;
+	sound s;
+	s.beep();
+	s.speak("Hello My name is Brick, Lego Brick!",true);
+	c.initialize();
+	std::cout << "Hello ARM World!" << std::endl;
+	c.drive(0,1050,0,5000);
+	bool x = true;
+	/*std::thread thj = std::thread([&] {
+		while(x){
+			intercom::msg(c.e.getMotorStatus(0).c_str());
+			intercom::msg("speed ", c.motors[0]->duty_cycle());
+			c.sleep(500);
+		};
+	});*/
+	while(!c.e.buttonPressed(ESCAPE)){};
+	c.drive(0,300,2000);
+	while(!c.e.buttonPressed(ESCAPE)){
+		if(c.e.buttonPressed(LEFT)){
+			c.drive_ToPositionAbsolute(0, 50);
+		}
+		if(c.e.buttonPressed(RIGHT)){
+			c.drive_ToPositionRelative(0, 50);
+		}
+	};
 
-
-  std::cout << "Hello ARM World!" << std::endl;
-  return 0;
+	x=false;
+	//std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+	//thj.join();
+	c.exit();
+	s.speak("Bye, Bye, Jacky!");
+	//c.terminate_on_key(); // we terminate if a button is pressed
+	return 0;
 }
 
 

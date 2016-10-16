@@ -22,6 +22,7 @@ Discarded input sections
  .group         0x00000000       0x10 ./src/Control.o
  .group         0x00000000       0x10 ./src/Control.o
  .group         0x00000000       0x10 ./src/Control.o
+ .group         0x00000000       0x10 ./src/Control.o
  .group         0x00000000        0x8 ./src/Control.o
  .group         0x00000000        0x8 ./src/Control.o
  .group         0x00000000        0x8 ./src/Control.o
@@ -130,6 +131,8 @@ Discarded input sections
                 0x00000000       0x20 ./src/ev3dev.o
  .note.GNU-stack
                 0x00000000        0x0 ./src/ev3dev.o
+ .group         0x00000000       0x10 ./src/main.o
+ .group         0x00000000       0x10 ./src/main.o
  .note.GNU-stack
                 0x00000000        0x0 ./src/main.o
  .note.GNU-stack
@@ -194,36 +197,36 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
 .note.gnu.build-id
  *(.note.gnu.build-id)
 
-.hash           0x00008168      0x450
+.hash           0x00008168      0x454
  *(.hash)
- .hash          0x00008168      0x450 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .hash          0x00008168      0x454 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
 .gnu.hash
  *(.gnu.hash)
 
-.dynsym         0x000085b8      0x8f0
+.dynsym         0x000085bc      0x900
  *(.dynsym)
- .dynsym        0x000085b8      0x8f0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .dynsym        0x000085bc      0x900 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.dynstr         0x00008ea8     0x107b
+.dynstr         0x00008ebc     0x108b
  *(.dynstr)
- .dynstr        0x00008ea8     0x107b c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .dynstr        0x00008ebc     0x108b c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.gnu.version    0x00009f24      0x11e
+.gnu.version    0x00009f48      0x120
  *(.gnu.version)
- .gnu.version   0x00009f24      0x11e c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .gnu.version   0x00009f48      0x120 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.gnu.version_d  0x0000a044        0x0
+.gnu.version_d  0x0000a068        0x0
  *(.gnu.version_d)
  .gnu.version_d
                 0x00000000        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.gnu.version_r  0x0000a044      0x110
+.gnu.version_r  0x0000a068      0x110
  *(.gnu.version_r)
  .gnu.version_r
-                0x0000a044      0x110 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x0000a068      0x110 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.rel.dyn        0x0000a154       0x98
+.rel.dyn        0x0000a178       0x98
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
  *(.rel.fini)
@@ -235,17 +238,17 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x0000a154        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .rel.got       0x0000a178        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
- .rel.bss       0x0000a15c       0x90 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0000a1ec                PROVIDE (__rel_iplt_start, .)
+ .rel.bss       0x0000a180       0x90 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x0000a210                PROVIDE (__rel_iplt_start, .)
  *(.rel.iplt)
  .rel.iplt      0x00000000        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0000a1ec                PROVIDE (__rel_iplt_end, .)
-                0x0000a1ec                PROVIDE (__rela_iplt_start, .)
-                0x0000a1ec                PROVIDE (__rela_iplt_end, .)
+                0x0000a210                PROVIDE (__rel_iplt_end, .)
+                0x0000a210                PROVIDE (__rela_iplt_start, .)
+                0x0000a210                PROVIDE (__rela_iplt_end, .)
 
-.rela.dyn       0x0000a1ec        0x0
+.rela.dyn       0x0000a210        0x0
  *(.rela.init)
  *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
  *(.rela.fini)
@@ -257,848 +260,885 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
  *(.rela.dtors)
  *(.rela.got)
  *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
-                0x0000a1ec                PROVIDE (__rel_iplt_start, .)
-                0x0000a1ec                PROVIDE (__rel_iplt_end, .)
-                0x0000a1ec                PROVIDE (__rela_iplt_start, .)
+                0x0000a210                PROVIDE (__rel_iplt_start, .)
+                0x0000a210                PROVIDE (__rel_iplt_end, .)
+                0x0000a210                PROVIDE (__rela_iplt_start, .)
  *(.rela.iplt)
-                0x0000a1ec                PROVIDE (__rela_iplt_end, .)
+                0x0000a210                PROVIDE (__rela_iplt_end, .)
 
-.rel.plt        0x0000a1ec      0x398
+.rel.plt        0x0000a210      0x3a0
  *(.rel.plt)
- .rel.plt       0x0000a1ec      0x398 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .rel.plt       0x0000a210      0x3a0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
 .rela.plt
  *(.rela.plt)
 
-.init           0x0000a584        0xc
+.init           0x0000a5b0        0xc
  *(SORT(.init))
- .init          0x0000a584        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
-                0x0000a584                _init
- .init          0x0000a58c        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
+ .init          0x0000a5b0        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
+                0x0000a5b0                _init
+ .init          0x0000a5b8        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
 
-.plt            0x0000a590      0x71c
+.plt            0x0000a5bc      0x72c
  *(.plt)
- .plt           0x0000a590      0x71c c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0000a5a8                open@@GLIBC_2.4
-                0x0000a5b8                __aeabi_i2f@@GCC_3.5
-                0x0000a5c8                std::__throw_length_error(char const*)@@GLIBCXX_3.4
-                0x0000a5d8                std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char)@@GLIBCXX_3.4
-                0x0000a5e8                std::basic_ifstream<char, std::char_traits<char> >::close()@@GLIBCXX_3.4
-                0x0000a5f8                mmap@@GLIBC_2.4
-                0x0000a608                std::ostream::operator<<(int)@@GLIBCXX_3.4
-                0x0000a614                abort@@GLIBC_2.4
-                0x0000a624                std::__detail::_List_node_base::_M_unhook()@@GLIBCXX_3.4.15
-                0x0000a634                opendir@@GLIBC_2.4
-                0x0000a644                memcmp@@GLIBC_2.4
-                0x0000a654                std::__throw_bad_cast()@@GLIBCXX_3.4
-                0x0000a660                __libc_start_main@@GLIBC_2.4
-                0x0000a670                std::ios_base::ios_base()@@GLIBCXX_3.4
-                0x0000a680                __cxa_guard_acquire@@CXXABI_1.3
-                0x0000a690                std::runtime_error::runtime_error(std::string const&)@@GLIBCXX_3.4
-                0x0000a6ac                std::__throw_system_error(int)@@GLIBCXX_3.4.11
-                0x0000a6bc                operator delete(void*)@@GLIBCXX_3.4
-                0x0000a6cc                std::string::_Rep::_M_dispose(std::allocator<char> const&)@@GLIBCXX_3.4
-                0x0000a6dc                std::system_category()@@GLIBCXX_3.4.11
-                0x0000a6ec                std::ctype<char>::_M_widen_init() const@@GLIBCXX_3.4.11
-                0x0000a6fc                __cxa_rethrow@@CXXABI_1.3
-                0x0000a70c                system@@GLIBC_2.4
-                0x0000a71c                std::ios_base::Init::Init()@@GLIBCXX_3.4
-                0x0000a72c                std::string::find(char, unsigned int) const@@GLIBCXX_3.4
-                0x0000a73c                std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@@GLIBCXX_3.4
-                0x0000a74c                memset@@GLIBC_2.4
-                0x0000a75c                __cxa_end_cleanup@@CXXABI_1.3
-                0x0000a76c                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&)@@GLIBCXX_3.4
-                0x0000a77c                std::this_thread::__sleep_for(std::chrono::duration<long long, std::ratio<1ll, 1ll> >, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> >)@@GLIBCXX_3.4.18
-                0x0000a78c                std::thread::_M_start_thread(std::shared_ptr<std::thread::_Impl_base>)@@GLIBCXX_3.4.11
-                0x0000a79c                std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)@@GLIBCXX_3.4
-                0x0000a7ac                std::__throw_out_of_range(char const*)@@GLIBCXX_3.4
-                0x0000a7bc                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&, unsigned int, unsigned int)@@GLIBCXX_3.4
-                0x0000a7cc                std::string::insert(unsigned int, char const*, unsigned int)@@GLIBCXX_3.4
-                0x0000a7d8                std::ios_base::Init::~Init()@@GLIBCXX_3.4
-                0x0000a7e8                std::__detail::_List_node_base::_M_transfer(std::__detail::_List_node_base*, std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
-                0x0000a7f8                std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@@GLIBCXX_3.4
-                0x0000a808                __aeabi_fmul@@GCC_3.5
-                0x0000a818                std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)@@GLIBCXX_3.4
-                0x0000a824                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@@GLIBCXX_3.4
-                0x0000a834                powf@@GLIBC_2.4
-                0x0000a844                std::string::_Rep::_M_destroy(std::allocator<char> const&)@@GLIBCXX_3.4
-                0x0000a854                pthread_mutex_unlock@@GLIBC_2.4
-                0x0000a864                std::istream::read(char*, int)@@GLIBCXX_3.4
-                0x0000a874                ioctl@@GLIBC_2.4
-                0x0000a884                __cxa_guard_release@@CXXABI_1.3
-                0x0000a894                std::string::append(unsigned int, char)@@GLIBCXX_3.4
-                0x0000a8a4                pthread_mutex_lock@@GLIBC_2.4
-                0x0000a8b4                strlen@@GLIBC_2.4
-                0x0000a8c0                std::system_error::~system_error()@@GLIBCXX_3.4.11
-                0x0000a8d0                std::_Rb_tree_increment(std::_Rb_tree_node_base const*)@@GLIBCXX_3.4
-                0x0000a8e0                memcpy@@GLIBC_2.4
-                0x0000a8f0                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)@@GLIBCXX_3.4
-                0x0000a900                std::thread::join()@@GLIBCXX_3.4.11
-                0x0000a910                std::terminate()@@GLIBCXX_3.4
-                0x0000a920                __aeabi_f2iz@@GCC_3.5
-                0x0000a930                std::locale::locale()@@GLIBCXX_3.4
-                0x0000a940                std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
-                0x0000a94c                __cxa_pure_virtual@@CXXABI_1.3
-                0x0000a95c                operator new(unsigned int)@@GLIBCXX_3.4
-                0x0000a96c                close@@GLIBC_2.4
-                0x0000a97c                std::type_info::operator==(std::type_info const&) const@@GLIBCXX_3.4
-                0x0000a98c                closedir@@GLIBC_2.4
-                0x0000a99c                std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)@@GLIBCXX_3.4
-                0x0000a9ac                std::string::_M_mutate(unsigned int, unsigned int, unsigned int)@@GLIBCXX_3.4
-                0x0000a9bc                std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
-                0x0000a9cc                std::ostream::flush()@@GLIBCXX_3.4
-                0x0000a9dc                std::__throw_bad_function_call()@@GLIBCXX_3.4.14
-                0x0000a9ec                std::ios_base::~ios_base()@@GLIBCXX_3.4
-                0x0000a9fc                std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_ostringstream()@@GLIBCXX_3.4
-                0x0000aa0c                std::__basic_file<char>::~__basic_file()@@GLIBCXX_3.4
-                0x0000aa1c                __aeabi_f2d@@GCC_3.5
-                0x0000aa2c                __cxa_allocate_exception@@CXXABI_1.3
-                0x0000aa3c                __cxa_free_exception@@CXXABI_1.3
-                0x0000aa4c                std::istream::operator>>(int&)@@GLIBCXX_3.4
-                0x0000aa5c                std::string::assign(std::string const&)@@GLIBCXX_3.4
-                0x0000aa6c                std::__throw_logic_error(char const*)@@GLIBCXX_3.4
-                0x0000aa7c                std::string::assign(char const*, unsigned int)@@GLIBCXX_3.4
-                0x0000aa8c                memmove@@GLIBC_2.4
-                0x0000aa9c                __aeabi_atexit@@CXXABI_ARM_1.3.3
-                0x0000aaac                std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@@GLIBCXX_3.4
-                0x0000aabc                __cxa_throw@@CXXABI_1.3
-                0x0000aacc                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const@@GLIBCXX_3.4
-                0x0000aadc                std::basic_filebuf<char, std::char_traits<char> >::basic_filebuf()@@GLIBCXX_3.4
-                0x0000aaec                std::_Rb_tree_increment(std::_Rb_tree_node_base*)@@GLIBCXX_3.4
-                0x0000aafc                std::invalid_argument::invalid_argument(std::string const&)@@GLIBCXX_3.4
-                0x0000ab0c                std::ostream& std::ostream::_M_insert<double>(double)@@GLIBCXX_3.4.9
-                0x0000ab1c                __cxa_end_catch@@CXXABI_1.3
-                0x0000ab2c                std::__throw_bad_alloc()@@GLIBCXX_3.4
-                0x0000ab3c                __aeabi_idiv@@GCC_3.5
-                0x0000ab4c                std::string::_Rep::_S_create(unsigned int, unsigned int, std::allocator<char> const&)@@GLIBCXX_3.4
-                0x0000ab5c                std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf()@@GLIBCXX_3.4
-                0x0000ab6c                munmap@@GLIBC_2.4
-                0x0000ab7c                std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@@GLIBCXX_3.4
-                0x0000ab8c                __cxa_guard_abort@@CXXABI_1.3
-                0x0000ab9c                __cxa_begin_catch@@CXXABI_1.3
-                0x0000abac                std::istream::seekg(long long, std::_Ios_Seekdir)@@GLIBCXX_3.4
-                0x0000abb8                __pthread_key_create@@GLIBC_2.4
-                0x0000abc8                std::string::append(char const*, unsigned int)@@GLIBCXX_3.4
-                0x0000abd4                std::invalid_argument::~invalid_argument()@@GLIBCXX_3.4
-                0x0000abe4                std::generic_category()@@GLIBCXX_3.4.11
-                0x0000abf4                strncmp@@GLIBC_2.4
-                0x0000ac00                __gxx_personality_v0@@CXXABI_1.3
-                0x0000ac10                readdir@@GLIBC_2.4
-                0x0000ac20                std::locale::~locale()@@GLIBCXX_3.4
-                0x0000ac30                std::__basic_file<char>::is_open() const@@GLIBCXX_3.4
-                0x0000ac40                std::ostream::put(char)@@GLIBCXX_3.4
-                0x0000ac50                std::string::_M_leak_hard()@@GLIBCXX_3.4
-                0x0000ac60                std::string::swap(std::string&)@@GLIBCXX_3.4
-                0x0000ac70                std::string::append(std::string const&)@@GLIBCXX_3.4
-                0x0000ac80                __errno_location@@GLIBC_2.4
-                0x0000ac90                std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, int)@@GLIBCXX_3.4.9
-                0x0000aca0                std::basic_filebuf<char, std::char_traits<char> >::close()@@GLIBCXX_3.4
+ .plt           0x0000a5bc      0x72c c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x0000a5d4                open@@GLIBC_2.4
+                0x0000a5e4                __aeabi_i2f@@GCC_3.5
+                0x0000a5f4                std::__throw_length_error(char const*)@@GLIBCXX_3.4
+                0x0000a604                std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char)@@GLIBCXX_3.4
+                0x0000a614                std::basic_ifstream<char, std::char_traits<char> >::close()@@GLIBCXX_3.4
+                0x0000a624                mmap@@GLIBC_2.4
+                0x0000a634                std::ostream::operator<<(int)@@GLIBCXX_3.4
+                0x0000a640                abort@@GLIBC_2.4
+                0x0000a650                __aeabi_lmul@@GCC_3.5
+                0x0000a660                std::__detail::_List_node_base::_M_unhook()@@GLIBCXX_3.4.15
+                0x0000a670                opendir@@GLIBC_2.4
+                0x0000a680                memcmp@@GLIBC_2.4
+                0x0000a690                std::__throw_bad_cast()@@GLIBCXX_3.4
+                0x0000a69c                __libc_start_main@@GLIBC_2.4
+                0x0000a6ac                __aeabi_ldivmod@@GCC_3.5
+                0x0000a6bc                std::ios_base::ios_base()@@GLIBCXX_3.4
+                0x0000a6cc                __cxa_guard_acquire@@CXXABI_1.3
+                0x0000a6dc                std::runtime_error::runtime_error(std::string const&)@@GLIBCXX_3.4
+                0x0000a6f8                std::__throw_system_error(int)@@GLIBCXX_3.4.11
+                0x0000a708                operator delete(void*)@@GLIBCXX_3.4
+                0x0000a718                std::string::_Rep::_M_dispose(std::allocator<char> const&)@@GLIBCXX_3.4
+                0x0000a728                std::system_category()@@GLIBCXX_3.4.11
+                0x0000a738                std::ctype<char>::_M_widen_init() const@@GLIBCXX_3.4.11
+                0x0000a748                __cxa_rethrow@@CXXABI_1.3
+                0x0000a758                system@@GLIBC_2.4
+                0x0000a768                std::ios_base::Init::Init()@@GLIBCXX_3.4
+                0x0000a778                std::string::find(char, unsigned int) const@@GLIBCXX_3.4
+                0x0000a788                std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@@GLIBCXX_3.4
+                0x0000a798                memset@@GLIBC_2.4
+                0x0000a7a8                __cxa_end_cleanup@@CXXABI_1.3
+                0x0000a7b8                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&)@@GLIBCXX_3.4
+                0x0000a7c8                std::this_thread::__sleep_for(std::chrono::duration<long long, std::ratio<1ll, 1ll> >, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> >)@@GLIBCXX_3.4.18
+                0x0000a7d8                std::thread::_M_start_thread(std::shared_ptr<std::thread::_Impl_base>)@@GLIBCXX_3.4.11
+                0x0000a7e8                std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)@@GLIBCXX_3.4
+                0x0000a7f8                std::__throw_out_of_range(char const*)@@GLIBCXX_3.4
+                0x0000a808                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&, unsigned int, unsigned int)@@GLIBCXX_3.4
+                0x0000a818                std::string::insert(unsigned int, char const*, unsigned int)@@GLIBCXX_3.4
+                0x0000a824                std::ios_base::Init::~Init()@@GLIBCXX_3.4
+                0x0000a834                std::__detail::_List_node_base::_M_transfer(std::__detail::_List_node_base*, std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
+                0x0000a844                std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@@GLIBCXX_3.4
+                0x0000a854                __aeabi_fmul@@GCC_3.5
+                0x0000a864                std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&)@@GLIBCXX_3.4
+                0x0000a870                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@@GLIBCXX_3.4
+                0x0000a880                powf@@GLIBC_2.4
+                0x0000a890                std::string::_Rep::_M_destroy(std::allocator<char> const&)@@GLIBCXX_3.4
+                0x0000a8a0                pthread_mutex_unlock@@GLIBC_2.4
+                0x0000a8b0                std::istream::read(char*, int)@@GLIBCXX_3.4
+                0x0000a8c0                ioctl@@GLIBC_2.4
+                0x0000a8d0                __cxa_guard_release@@CXXABI_1.3
+                0x0000a8e0                std::string::append(unsigned int, char)@@GLIBCXX_3.4
+                0x0000a8f0                pthread_mutex_lock@@GLIBC_2.4
+                0x0000a900                strlen@@GLIBC_2.4
+                0x0000a90c                std::system_error::~system_error()@@GLIBCXX_3.4.11
+                0x0000a91c                std::_Rb_tree_increment(std::_Rb_tree_node_base const*)@@GLIBCXX_3.4
+                0x0000a92c                memcpy@@GLIBC_2.4
+                0x0000a93c                std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)@@GLIBCXX_3.4
+                0x0000a94c                std::thread::join()@@GLIBCXX_3.4.11
+                0x0000a95c                std::terminate()@@GLIBCXX_3.4
+                0x0000a96c                __aeabi_f2iz@@GCC_3.5
+                0x0000a97c                std::locale::locale()@@GLIBCXX_3.4
+                0x0000a98c                std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
+                0x0000a998                __cxa_pure_virtual@@CXXABI_1.3
+                0x0000a9a8                operator new(unsigned int)@@GLIBCXX_3.4
+                0x0000a9b8                close@@GLIBC_2.4
+                0x0000a9c8                std::type_info::operator==(std::type_info const&) const@@GLIBCXX_3.4
+                0x0000a9d8                closedir@@GLIBC_2.4
+                0x0000a9e8                std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)@@GLIBCXX_3.4
+                0x0000a9f8                std::string::_M_mutate(unsigned int, unsigned int, unsigned int)@@GLIBCXX_3.4
+                0x0000aa08                std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+                0x0000aa18                std::ostream::flush()@@GLIBCXX_3.4
+                0x0000aa28                std::__throw_bad_function_call()@@GLIBCXX_3.4.14
+                0x0000aa38                std::ios_base::~ios_base()@@GLIBCXX_3.4
+                0x0000aa48                std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_ostringstream()@@GLIBCXX_3.4
+                0x0000aa58                std::__basic_file<char>::~__basic_file()@@GLIBCXX_3.4
+                0x0000aa68                __aeabi_f2d@@GCC_3.5
+                0x0000aa78                __cxa_allocate_exception@@CXXABI_1.3
+                0x0000aa88                __cxa_free_exception@@CXXABI_1.3
+                0x0000aa98                std::istream::operator>>(int&)@@GLIBCXX_3.4
+                0x0000aaa8                std::string::assign(std::string const&)@@GLIBCXX_3.4
+                0x0000aab8                std::__throw_logic_error(char const*)@@GLIBCXX_3.4
+                0x0000aac8                std::string::assign(char const*, unsigned int)@@GLIBCXX_3.4
+                0x0000aad8                memmove@@GLIBC_2.4
+                0x0000aae8                __aeabi_atexit@@CXXABI_ARM_1.3.3
+                0x0000aaf8                std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@@GLIBCXX_3.4
+                0x0000ab08                __cxa_throw@@CXXABI_1.3
+                0x0000ab18                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const@@GLIBCXX_3.4
+                0x0000ab28                std::basic_filebuf<char, std::char_traits<char> >::basic_filebuf()@@GLIBCXX_3.4
+                0x0000ab38                std::_Rb_tree_increment(std::_Rb_tree_node_base*)@@GLIBCXX_3.4
+                0x0000ab48                std::invalid_argument::invalid_argument(std::string const&)@@GLIBCXX_3.4
+                0x0000ab58                std::ostream& std::ostream::_M_insert<double>(double)@@GLIBCXX_3.4.9
+                0x0000ab68                __cxa_end_catch@@CXXABI_1.3
+                0x0000ab78                std::__throw_bad_alloc()@@GLIBCXX_3.4
+                0x0000ab88                std::string::_Rep::_S_create(unsigned int, unsigned int, std::allocator<char> const&)@@GLIBCXX_3.4
+                0x0000ab98                std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf()@@GLIBCXX_3.4
+                0x0000aba8                munmap@@GLIBC_2.4
+                0x0000abb8                std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@@GLIBCXX_3.4
+                0x0000abc8                __cxa_guard_abort@@CXXABI_1.3
+                0x0000abd8                __cxa_begin_catch@@CXXABI_1.3
+                0x0000abe8                std::istream::seekg(long long, std::_Ios_Seekdir)@@GLIBCXX_3.4
+                0x0000abf4                __pthread_key_create@@GLIBC_2.4
+                0x0000ac04                std::string::append(char const*, unsigned int)@@GLIBCXX_3.4
+                0x0000ac10                std::invalid_argument::~invalid_argument()@@GLIBCXX_3.4
+                0x0000ac20                std::generic_category()@@GLIBCXX_3.4.11
+                0x0000ac30                strncmp@@GLIBC_2.4
+                0x0000ac3c                __gxx_personality_v0@@CXXABI_1.3
+                0x0000ac4c                readdir@@GLIBC_2.4
+                0x0000ac5c                std::locale::~locale()@@GLIBCXX_3.4
+                0x0000ac6c                std::__basic_file<char>::is_open() const@@GLIBCXX_3.4
+                0x0000ac7c                std::ostream::put(char)@@GLIBCXX_3.4
+                0x0000ac8c                std::string::_M_leak_hard()@@GLIBCXX_3.4
+                0x0000ac9c                std::string::swap(std::string&)@@GLIBCXX_3.4
+                0x0000acac                std::string::append(std::string const&)@@GLIBCXX_3.4
+                0x0000acbc                __errno_location@@GLIBC_2.4
+                0x0000accc                std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, int)@@GLIBCXX_3.4.9
+                0x0000acdc                std::basic_filebuf<char, std::char_traits<char> >::close()@@GLIBCXX_3.4
 
-.iplt           0x0000acac        0x0
+.iplt           0x0000ace8        0x0
  *(.iplt)
  .iplt          0x00000000        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
 
-.text           0x0000acb0     0x9f58
+.text           0x0000ace8     0xbd88
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  .text.unlikely
-                0x0000acb0       0x18 ./src/Control.o
+                0x0000ace8       0x18 ./src/Control.o
  .text.unlikely
-                0x0000acc8       0x18 ./src/ev3dev.o
+                0x0000ad00       0x18 ./src/ev3dev.o
+ .text.unlikely
+                0x0000ad18       0x90 ./src/main.o
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
- .text.startup  0x0000ace0      0x12c ./src/Control.o
- .text.startup  0x0000ae0c      0xbf0 ./src/ev3dev.o
- .text.startup  0x0000b9fc      0x1f8 ./src/main.o
-                0x0000bb2c                main
+ .text.startup  0x0000ada8      0x188 ./src/Control.o
+ .text.startup  0x0000af30      0xbf0 ./src/ev3dev.o
+ .text.startup  0x0000bb20      0x570 ./src/main.o
+                0x0000bc90                main
  *(.text.hot .text.hot.*)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000bbf4       0x3c c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0000bbf4                _start
- .text          0x0000bc30       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
- .text          0x0000bc54       0xd4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
- .text          0x0000bd28     0x1290 ./src/Control.o
-                0x0000be58                ev3dev::Control::~Control()
-                0x0000be58                ev3dev::Control::~Control()
-                0x0000c110                ev3dev::Control::~Control()
-                0x0000c124                ev3dev::Control::Control()
-                0x0000c124                ev3dev::Control::Control()
-                0x0000c490                ev3dev::Control::msg(char const*)
-                0x0000c524                ev3dev::Control::msg(char const*, int const&)
-                0x0000c61c                ev3dev::Control::stop()
-                0x0000c6e0                ev3dev::Control::reset()
-                0x0000c7ac                ev3dev::Control::initialized(int) const
-                0x0000c824                ev3dev::Control::sensorRead()
-                0x0000c974                ev3dev::Control::driveprimitive()
-                0x0000cc78                ev3dev::Control::drive(int, int)
+ .text          0x0000c090       0x3c c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x0000c090                _start
+ .text          0x0000c0cc       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
+ .text          0x0000c0f0       0xd4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ *fill*         0x0000c1c4        0x4 
+ .text          0x0000c1c8     0x2af0 ./src/Control.o
+                0x0000c7a0                ev3dev::Control::Control()
+                0x0000c7a0                ev3dev::Control::Control()
+                0x0000cccc                ev3dev::Control::sleep(int)
+                0x0000cd20                ev3dev::Control::drive(int, int, int, int)
+                0x0000d080                ev3dev::Control::drive_ToPositionRelative(int, int)
+                0x0000d370                ev3dev::Control::drive_ToPositionAbsolute(int, int)
+                0x0000d660                ev3dev::Control::checkDevices(bool)
+                0x0000d9c8                ev3dev::Control::sensorGetValue(int)
+                0x0000da04                ev3dev::Control::th_sensorRead(int)
+                0x0000daec                ev3dev::Control::th_initMotorStatus(int)
+                0x0000dbc0                ev3dev::Control::th_initSensorInput(int)
+                0x0000dc98                ev3dev::Control::th_initButtonInput(int)
+                0x0000ddbc                ev3dev::Control::initialize(bool, int)
+                0x0000ddf0                ev3dev::Control::th_motorReadStatus(int)
+                0x0000e3dc                ev3dev::Control::stop(int)
+                0x0000e554                ev3dev::Control::stopAll()
+                0x0000e56c                ev3dev::Control::exit()
+                0x0000e834                ev3dev::Control::reset(int)
+                0x0000e90c                ev3dev::Control::resetAll()
+                0x0000e924                ev3dev::Control::~Control()
+                0x0000e924                ev3dev::Control::~Control()
+                0x0000ec10                ev3dev::Control::~Control()
  .text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x0000cfb8       0x10 ./src/Control.o
-                0x0000cfb8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::_M_destroy()
+                0x0000ecb8       0x10 ./src/Control.o
+                0x0000ecb8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::_M_destroy()
  .text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x0000cfc8        0xc ./src/Control.o
-                0x0000cfc8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
-                0x0000cfc8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
+                0x0000ecc8        0xc ./src/Control.o
+                0x0000ecc8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
+                0x0000ecc8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
  .text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x0000cfd4       0x14 ./src/Control.o
-                0x0000cfd4                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
+                0x0000ecd4       0x14 ./src/Control.o
+                0x0000ecd4                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::~_Sp_counted_base()
  .text._ZNSt6thread10_Impl_baseD2Ev
-                0x0000cfe8       0x68 ./src/Control.o
-                0x0000cfe8                std::thread::_Impl_base::~_Impl_base()
-                0x0000cfe8                std::thread::_Impl_base::~_Impl_base()
+                0x0000ece8       0x68 ./src/Control.o
+                0x0000ece8                std::thread::_Impl_base::~_Impl_base()
+                0x0000ece8                std::thread::_Impl_base::~_Impl_base()
  .text._ZNSt6thread10_Impl_baseD0Ev
-                0x0000d050       0x6c ./src/Control.o
-                0x0000d050                std::thread::_Impl_base::~_Impl_base()
+                0x0000ed50       0x6c ./src/Control.o
+                0x0000ed50                std::thread::_Impl_base::~_Impl_base()
+ .text._ZN6ev3dev6eventsD2Ev
+                0x0000edbc       0xb8 ./src/Control.o
+                0x0000edbc                ev3dev::events::~events()
+                0x0000edbc                ev3dev::events::~events()
  .text._ZN6ev3dev6sensorD2Ev
-                0x0000d0bc       0x54 ./src/Control.o
-                0x0000d0bc                ev3dev::sensor::~sensor()
-                0x0000d0bc                ev3dev::sensor::~sensor()
+                0x0000ee74       0x54 ./src/Control.o
+                0x0000ee74                ev3dev::sensor::~sensor()
+                0x0000ee74                ev3dev::sensor::~sensor()
  .text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
-                0x0000d110       0x54 ./src/Control.o
-                0x0000d110                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::_M_release()
+                0x0000eec8       0x54 ./src/Control.o
+                0x0000eec8                std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::_M_release()
  .text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
-                0x0000d164       0x78 ./src/Control.o
-                0x0000d164                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_erase(std::_Rb_tree_node<std::string>*)
+                0x0000ef1c       0x78 ./src/Control.o
+                0x0000ef1c                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_erase(std::_Rb_tree_node<std::string>*)
  .text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
-                0x0000d1dc       0x84 ./src/Control.o
-                0x0000d1dc                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::find(std::string const&) const
- .text          0x0000d260     0x55e0 ./src/ev3dev.o
-                0x0000da0c                ev3dev::remote_control::~remote_control()
-                0x0000da0c                ev3dev::remote_control::~remote_control()
-                0x0000dadc                ev3dev::remote_control::~remote_control()
-                0x0000daf0                ev3dev::device::device_index() const
-                0x0000dba8                ev3dev::button::file_descriptor::file_descriptor(char const*, int)
-                0x0000dba8                ev3dev::button::file_descriptor::file_descriptor(char const*, int)
-                0x0000dbbc                ev3dev::button::file_descriptor::~file_descriptor()
-                0x0000dbbc                ev3dev::button::file_descriptor::~file_descriptor()
-                0x0000dbd0                ev3dev::button::button(int)
-                0x0000dbd0                ev3dev::button::button(int)
-                0x0000dc88                ev3dev::button::pressed() const
-                0x0000dccc                ev3dev::lcd::~lcd()
-                0x0000dccc                ev3dev::lcd::~lcd()
-                0x0000dce4                ev3dev::lcd::fill(unsigned char)
-                0x0000dcfc                ev3dev::lcd::init()
-                0x0000dd60                ev3dev::lcd::lcd()
-                0x0000dd60                ev3dev::lcd::lcd()
-                0x0000dd7c                ev3dev::lcd::deinit()
-                0x0000dd94                ev3dev::device::get_attr_int(std::string const&) const
-                0x0000e09c                ev3dev::sensor::value(unsigned int) const
-                0x0000e1dc                ev3dev::remote_control::process()
-                0x0000e204                ev3dev::sensor::float_value(unsigned int) const
-                0x0000e294                ev3dev::device::set_attr_int(std::string const&, int)
-                0x0000e464                ev3dev::led::set_color(std::vector<ev3dev::led*, std::allocator<ev3dev::led*> > const&, std::vector<float, std::allocator<float> > const&)
-                0x0000e580                ev3dev::led::all_off()
-                0x0000e6d4                ev3dev::device::set_attr_string(std::string const&, std::string const&)
-                0x0000e86c                ev3dev::led::flash(unsigned int, unsigned int)
-                0x0000ea94                ev3dev::remote_control::remote_control(ev3dev::infrared_sensor&, unsigned int)
-                0x0000ea94                ev3dev::remote_control::remote_control(ev3dev::infrared_sensor&, unsigned int)
-                0x0000ebe4                ev3dev::device::get_attr_string(std::string const&) const
-                0x0000ed40                ev3dev::device::connect(std::string const&, std::string const&, std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
-                0x0000ef60                ev3dev::sensor::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
-                0x0000f020                ev3dev::motor::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
-                0x0000f0c8                ev3dev::lego_port::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
-                0x0000f170                ev3dev::device::get_attr_line(std::string const&) const
-                0x0000f300                ev3dev::device::get_attr_from_set(std::string const&) const
-                0x0000f4bc                ev3dev::remote_control::on_value_changed(int)
-                0x0000f578                ev3dev::button::process()
-                0x0000f5a4                ev3dev::button::process_all()
-                0x0000f630                ev3dev::led::led(std::string)
-                0x0000f630                ev3dev::led::led(std::string)
-                0x0000f6d4                ev3dev::power_supply::power_supply(std::string)
-                0x0000f6d4                ev3dev::power_supply::power_supply(std::string)
-                0x0000f790                ev3dev::device::get_attr_set(std::string const&, std::string*) const
-                0x0000f9d0                ev3dev::sound::beep(std::string const&, bool)
-                0x0000fc2c                ev3dev::sound::tone(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, bool)
-                0x0000fea4                ev3dev::sound::tone(float, float, bool)
-                0x0000ffbc                ev3dev::sound::play(std::string const&, bool)
-                0x00010218                ev3dev::sound::speak(std::string const&, bool)
-                0x00010490                ev3dev::lego_port::lego_port(std::string)
-                0x00010490                ev3dev::lego_port::lego_port(std::string)
-                0x00010608                ev3dev::motor::motor(std::string)
-                0x00010608                ev3dev::motor::motor(std::string)
-                0x00010780                ev3dev::sensor::sensor(std::string)
-                0x00010780                ev3dev::sensor::sensor(std::string)
-                0x0001090c                ev3dev::servo_motor::servo_motor(std::string)
-                0x0001090c                ev3dev::servo_motor::servo_motor(std::string)
-                0x00010b30                ev3dev::dc_motor::dc_motor(std::string)
-                0x00010b30                ev3dev::dc_motor::dc_motor(std::string)
-                0x00010d60                ev3dev::sensor::sensor(std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> > const&)
-                0x00010d60                ev3dev::sensor::sensor(std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> > const&)
-                0x00010fac                ev3dev::i2c_sensor::i2c_sensor(std::string)
-                0x00010fac                ev3dev::i2c_sensor::i2c_sensor(std::string)
-                0x0001109c                ev3dev::touch_sensor::touch_sensor(std::string)
-                0x0001109c                ev3dev::touch_sensor::touch_sensor(std::string)
-                0x00011224                ev3dev::color_sensor::color_sensor(std::string)
-                0x00011224                ev3dev::color_sensor::color_sensor(std::string)
-                0x00011314                ev3dev::ultrasonic_sensor::ultrasonic_sensor(std::string)
-                0x00011314                ev3dev::ultrasonic_sensor::ultrasonic_sensor(std::string)
-                0x0001143c                ev3dev::gyro_sensor::gyro_sensor(std::string)
-                0x0001143c                ev3dev::gyro_sensor::gyro_sensor(std::string)
-                0x0001152c                ev3dev::infrared_sensor::infrared_sensor(std::string)
-                0x0001152c                ev3dev::infrared_sensor::infrared_sensor(std::string)
-                0x0001161c                ev3dev::remote_control::remote_control(unsigned int)
-                0x0001161c                ev3dev::remote_control::remote_control(unsigned int)
-                0x000117e4                ev3dev::light_sensor::light_sensor(std::string)
-                0x000117e4                ev3dev::light_sensor::light_sensor(std::string)
-                0x000118d4                ev3dev::sound_sensor::sound_sensor(std::string)
-                0x000118d4                ev3dev::sound_sensor::sound_sensor(std::string)
-                0x00011d74                ev3dev::motor::motor(std::string, std::string const&)
-                0x00011d74                ev3dev::motor::motor(std::string, std::string const&)
-                0x00011fd8                ev3dev::medium_motor::medium_motor(std::string)
-                0x00011fd8                ev3dev::medium_motor::medium_motor(std::string)
-                0x00012044                ev3dev::large_motor::large_motor(std::string)
-                0x00012044                ev3dev::large_motor::large_motor(std::string)
-                0x000120b0                ev3dev::sensor::type_name() const
-                0x00012450                ev3dev::sensor::bin_data() const
+                0x0000ef94       0x84 ./src/Control.o
+                0x0000ef94                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::find(std::string const&) const
+ .text          0x0000f018     0x55e0 ./src/ev3dev.o
+                0x0000f7c4                ev3dev::remote_control::~remote_control()
+                0x0000f7c4                ev3dev::remote_control::~remote_control()
+                0x0000f894                ev3dev::remote_control::~remote_control()
+                0x0000f8a8                ev3dev::device::device_index() const
+                0x0000f960                ev3dev::button::file_descriptor::file_descriptor(char const*, int)
+                0x0000f960                ev3dev::button::file_descriptor::file_descriptor(char const*, int)
+                0x0000f974                ev3dev::button::file_descriptor::~file_descriptor()
+                0x0000f974                ev3dev::button::file_descriptor::~file_descriptor()
+                0x0000f988                ev3dev::button::button(int)
+                0x0000f988                ev3dev::button::button(int)
+                0x0000fa40                ev3dev::button::pressed() const
+                0x0000fa84                ev3dev::lcd::~lcd()
+                0x0000fa84                ev3dev::lcd::~lcd()
+                0x0000fa9c                ev3dev::lcd::fill(unsigned char)
+                0x0000fab4                ev3dev::lcd::init()
+                0x0000fb18                ev3dev::lcd::lcd()
+                0x0000fb18                ev3dev::lcd::lcd()
+                0x0000fb34                ev3dev::lcd::deinit()
+                0x0000fb4c                ev3dev::device::get_attr_int(std::string const&) const
+                0x0000fe54                ev3dev::sensor::value(unsigned int) const
+                0x0000ff94                ev3dev::remote_control::process()
+                0x0000ffbc                ev3dev::sensor::float_value(unsigned int) const
+                0x0001004c                ev3dev::device::set_attr_int(std::string const&, int)
+                0x0001021c                ev3dev::led::set_color(std::vector<ev3dev::led*, std::allocator<ev3dev::led*> > const&, std::vector<float, std::allocator<float> > const&)
+                0x00010338                ev3dev::led::all_off()
+                0x0001048c                ev3dev::device::set_attr_string(std::string const&, std::string const&)
+                0x00010624                ev3dev::led::flash(unsigned int, unsigned int)
+                0x0001084c                ev3dev::remote_control::remote_control(ev3dev::infrared_sensor&, unsigned int)
+                0x0001084c                ev3dev::remote_control::remote_control(ev3dev::infrared_sensor&, unsigned int)
+                0x0001099c                ev3dev::device::get_attr_string(std::string const&) const
+                0x00010af8                ev3dev::device::connect(std::string const&, std::string const&, std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
+                0x00010d18                ev3dev::sensor::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
+                0x00010dd8                ev3dev::motor::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
+                0x00010e80                ev3dev::lego_port::connect(std::map<std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > > const&)
+                0x00010f28                ev3dev::device::get_attr_line(std::string const&) const
+                0x000110b8                ev3dev::device::get_attr_from_set(std::string const&) const
+                0x00011274                ev3dev::remote_control::on_value_changed(int)
+                0x00011330                ev3dev::button::process()
+                0x0001135c                ev3dev::button::process_all()
+                0x000113e8                ev3dev::led::led(std::string)
+                0x000113e8                ev3dev::led::led(std::string)
+                0x0001148c                ev3dev::power_supply::power_supply(std::string)
+                0x0001148c                ev3dev::power_supply::power_supply(std::string)
+                0x00011548                ev3dev::device::get_attr_set(std::string const&, std::string*) const
+                0x00011788                ev3dev::sound::beep(std::string const&, bool)
+                0x000119e4                ev3dev::sound::tone(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, bool)
+                0x00011c5c                ev3dev::sound::tone(float, float, bool)
+                0x00011d74                ev3dev::sound::play(std::string const&, bool)
+                0x00011fd0                ev3dev::sound::speak(std::string const&, bool)
+                0x00012248                ev3dev::lego_port::lego_port(std::string)
+                0x00012248                ev3dev::lego_port::lego_port(std::string)
+                0x000123c0                ev3dev::motor::motor(std::string)
+                0x000123c0                ev3dev::motor::motor(std::string)
+                0x00012538                ev3dev::sensor::sensor(std::string)
+                0x00012538                ev3dev::sensor::sensor(std::string)
+                0x000126c4                ev3dev::servo_motor::servo_motor(std::string)
+                0x000126c4                ev3dev::servo_motor::servo_motor(std::string)
+                0x000128e8                ev3dev::dc_motor::dc_motor(std::string)
+                0x000128e8                ev3dev::dc_motor::dc_motor(std::string)
+                0x00012b18                ev3dev::sensor::sensor(std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> > const&)
+                0x00012b18                ev3dev::sensor::sensor(std::string, std::set<std::string, std::less<std::string>, std::allocator<std::string> > const&)
+                0x00012d64                ev3dev::i2c_sensor::i2c_sensor(std::string)
+                0x00012d64                ev3dev::i2c_sensor::i2c_sensor(std::string)
+                0x00012e54                ev3dev::touch_sensor::touch_sensor(std::string)
+                0x00012e54                ev3dev::touch_sensor::touch_sensor(std::string)
+                0x00012fdc                ev3dev::color_sensor::color_sensor(std::string)
+                0x00012fdc                ev3dev::color_sensor::color_sensor(std::string)
+                0x000130cc                ev3dev::ultrasonic_sensor::ultrasonic_sensor(std::string)
+                0x000130cc                ev3dev::ultrasonic_sensor::ultrasonic_sensor(std::string)
+                0x000131f4                ev3dev::gyro_sensor::gyro_sensor(std::string)
+                0x000131f4                ev3dev::gyro_sensor::gyro_sensor(std::string)
+                0x000132e4                ev3dev::infrared_sensor::infrared_sensor(std::string)
+                0x000132e4                ev3dev::infrared_sensor::infrared_sensor(std::string)
+                0x000133d4                ev3dev::remote_control::remote_control(unsigned int)
+                0x000133d4                ev3dev::remote_control::remote_control(unsigned int)
+                0x0001359c                ev3dev::light_sensor::light_sensor(std::string)
+                0x0001359c                ev3dev::light_sensor::light_sensor(std::string)
+                0x0001368c                ev3dev::sound_sensor::sound_sensor(std::string)
+                0x0001368c                ev3dev::sound_sensor::sound_sensor(std::string)
+                0x00013b2c                ev3dev::motor::motor(std::string, std::string const&)
+                0x00013b2c                ev3dev::motor::motor(std::string, std::string const&)
+                0x00013d90                ev3dev::medium_motor::medium_motor(std::string)
+                0x00013d90                ev3dev::medium_motor::medium_motor(std::string)
+                0x00013dfc                ev3dev::large_motor::large_motor(std::string)
+                0x00013dfc                ev3dev::large_motor::large_motor(std::string)
+                0x00013e68                ev3dev::sensor::type_name() const
+                0x00014208                ev3dev::sensor::bin_data() const
  .text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00012840        0xc ./src/ev3dev.o
-                0x00012840                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
-                0x00012840                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
+                0x000145f8        0xc ./src/ev3dev.o
+                0x000145f8                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
+                0x000145f8                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
  .text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE14_M_get_deleterERKSt9type_info
-                0x0001284c        0x4 ./src/ev3dev.o
-                0x0001284c                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)
+                0x00014604        0x4 ./src/ev3dev.o
+                0x00014604                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)
  .text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x00012850       0x14 ./src/ev3dev.o
-                0x00012850                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
+                0x00014608       0x14 ./src/ev3dev.o
+                0x00014608                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr()
  .text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x00012864       0x14 ./src/ev3dev.o
-                0x00012864                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_destroy()
+                0x0001461c       0x14 ./src/ev3dev.o
+                0x0001461c                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_destroy()
  .text._ZNSt6vectorIfSaIfEED2Ev
-                0x00012878       0x14 ./src/ev3dev.o
-                0x00012878                std::vector<float, std::allocator<float> >::~vector()
-                0x00012878                std::vector<float, std::allocator<float> >::~vector()
+                0x00014630       0x14 ./src/ev3dev.o
+                0x00014630                std::vector<float, std::allocator<float> >::~vector()
+                0x00014630                std::vector<float, std::allocator<float> >::~vector()
  .text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EED2Ev
-                0x0001288c       0x14 ./src/ev3dev.o
-                0x0001288c                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::~vector()
-                0x0001288c                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::~vector()
+                0x00014644       0x14 ./src/ev3dev.o
+                0x00014644                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::~vector()
+                0x00014644                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::~vector()
  .text._ZN6ev3dev6buttonD2Ev
-                0x000128a0       0x78 ./src/ev3dev.o
-                0x000128a0                ev3dev::button::~button()
-                0x000128a0                ev3dev::button::~button()
+                0x00014658       0x78 ./src/ev3dev.o
+                0x00014658                ev3dev::button::~button()
+                0x00014658                ev3dev::button::~button()
  .text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
-                0x00012918       0x1c ./src/ev3dev.o
-                0x00012918                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_dispose()
+                0x000146d0       0x1c ./src/ev3dev.o
+                0x000146d0                std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>::_M_dispose()
  .text._ZN6ev3dev12power_supplyD2Ev
-                0x00012934       0x48 ./src/ev3dev.o
-                0x00012934                ev3dev::power_supply::~power_supply()
-                0x00012934                ev3dev::power_supply::~power_supply()
+                0x000146ec       0x48 ./src/ev3dev.o
+                0x000146ec                ev3dev::power_supply::~power_supply()
+                0x000146ec                ev3dev::power_supply::~power_supply()
  .text._ZN6ev3dev3ledD2Ev
-                0x0001297c       0x48 ./src/ev3dev.o
-                0x0001297c                ev3dev::led::~led()
-                0x0001297c                ev3dev::led::~led()
+                0x00014734       0x48 ./src/ev3dev.o
+                0x00014734                ev3dev::led::~led()
+                0x00014734                ev3dev::led::~led()
  .text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev
-                0x000129c4       0x60 ./src/ev3dev.o
-                0x000129c4                __real__ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev
-                0x000129c4                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+                0x0001477c       0x60 ./src/ev3dev.o
+                0x0001477c                __real__ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev
+                0x0001477c                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
  .text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
-                0x00012a24       0x68 ./src/ev3dev.o
-                0x00012a24                __real__ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
+                0x000147dc       0x68 ./src/ev3dev.o
+                0x000147dc                __real__ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
  .text._ZNSt12system_errorC2ESt10error_code
-                0x00012a8c       0x84 ./src/ev3dev.o
-                0x00012a8c                std::system_error::system_error(std::error_code)
-                0x00012a8c                std::system_error::system_error(std::error_code)
+                0x00014844       0x84 ./src/ev3dev.o
+                0x00014844                std::system_error::system_error(std::error_code)
+                0x00014844                std::system_error::system_error(std::error_code)
  .text._ZNSt12system_errorC2ESt10error_codeRKSs
-                0x00012b10      0x178 ./src/ev3dev.o
-                0x00012b10                std::system_error::system_error(std::error_code, std::string const&)
-                0x00012b10                std::system_error::system_error(std::error_code, std::string const&)
+                0x000148c8      0x178 ./src/ev3dev.o
+                0x000148c8                std::system_error::system_error(std::error_code, std::string const&)
+                0x000148c8                std::system_error::system_error(std::error_code, std::string const&)
  .text._ZNSt4pairIKSsS0_ED2Ev
-                0x00012c88       0x7c ./src/ev3dev.o
-                0x00012c88                std::pair<std::string const, std::string const>::~pair()
-                0x00012c88                std::pair<std::string const, std::string const>::~pair()
+                0x00014a40       0x7c ./src/ev3dev.o
+                0x00014a40                std::pair<std::string const, std::string const>::~pair()
+                0x00014a40                std::pair<std::string const, std::string const>::~pair()
  .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
-                0x00012d04       0x28 ./src/ev3dev.o
-                0x00012d04                __real__ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
+                0x00014abc       0x28 ./src/ev3dev.o
+                0x00014abc                __real__ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
  .text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
-                0x00012d2c       0x64 ./src/ev3dev.o
-                0x00012d2c                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::vector(std::initializer_list<ev3dev::led*>, std::allocator<ev3dev::led*> const&)
-                0x00012d2c                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::vector(std::initializer_list<ev3dev::led*>, std::allocator<ev3dev::led*> const&)
+                0x00014ae4       0x64 ./src/ev3dev.o
+                0x00014ae4                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::vector(std::initializer_list<ev3dev::led*>, std::allocator<ev3dev::led*> const&)
+                0x00014ae4                std::vector<ev3dev::led*, std::allocator<ev3dev::led*> >::vector(std::initializer_list<ev3dev::led*>, std::allocator<ev3dev::led*> const&)
  .text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
-                0x00012d90       0x64 ./src/ev3dev.o
-                0x00012d90                std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&)
-                0x00012d90                std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&)
+                0x00014b48       0x64 ./src/ev3dev.o
+                0x00014b48                std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&)
+                0x00014b48                std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&)
  .text._ZNKSt8functionIFvbEEclEb
-                0x00012df4       0x14 ./src/ev3dev.o
-                0x00012df4                std::function<void (bool)>::operator()(bool) const
+                0x00014bac       0x14 ./src/ev3dev.o
+                0x00014bac                std::function<void (bool)>::operator()(bool) const
  .text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
-                0x00012e08       0x30 ./src/ev3dev.o
-                0x00012e08                std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::~vector()
-                0x00012e08                std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::~vector()
+                0x00014bc0       0x30 ./src/ev3dev.o
+                0x00014bc0                std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::~vector()
+                0x00014bc0                std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::~vector()
  .text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
-                0x00012e38       0x50 ./src/ev3dev.o
-                0x00012e38                std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >::~pair()
-                0x00012e38                std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >::~pair()
+                0x00014bf0       0x50 ./src/ev3dev.o
+                0x00014bf0                std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >::~pair()
+                0x00014bf0                std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >::~pair()
  .text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
-                0x00012e88       0x80 ./src/ev3dev.o
-                0x00012e88                std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >*)
+                0x00014c40       0x80 ./src/ev3dev.o
+                0x00014c40                std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >*)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00012f08       0xac ./src/ev3dev.o
-                0x00012f08                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::string const> >*)
+                0x00014cc0       0xac ./src/ev3dev.o
+                0x00014cc0                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::string const> >*)
  .text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
-                0x00012fb4       0x10 ./src/ev3dev.o
-                0x00012fb4                std::map<std::string, std::string const, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::~map()
-                0x00012fb4                std::map<std::string, std::string const, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::~map()
+                0x00014d6c       0x10 ./src/ev3dev.o
+                0x00014d6c                std::map<std::string, std::string const, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::~map()
+                0x00014d6c                std::map<std::string, std::string const, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::~map()
  .text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00012fc4       0x78 ./src/ev3dev.o
-                0x00012fc4                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, int> >*)
+                0x00014d7c       0x78 ./src/ev3dev.o
+                0x00014d7c                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, int> >*)
  .text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
-                0x0001303c       0x10 ./src/ev3dev.o
-                0x0001303c                std::map<std::string, int, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::~map()
-                0x0001303c                std::map<std::string, int, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::~map()
+                0x00014df4       0x10 ./src/ev3dev.o
+                0x00014df4                std::map<std::string, int, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::~map()
+                0x00014df4                std::map<std::string, int, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::~map()
  .text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
-                0x0001304c       0xa8 ./src/ev3dev.o
-                0x0001304c                std::vector<char, std::allocator<char> >::_M_default_append(unsigned int)
+                0x00014e04       0xa8 ./src/ev3dev.o
+                0x00014e04                std::vector<char, std::allocator<char> >::_M_default_append(unsigned int)
  .text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
-                0x000130f4       0xcc ./src/ev3dev.o
-                0x000130f4                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_get_insert_unique_pos(std::string const&)
+                0x00014eac       0xcc ./src/ev3dev.o
+                0x00014eac                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_get_insert_unique_pos(std::string const&)
  .text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
-                0x000131c0       0x94 ./src/ev3dev.o
-                0x000131c0                std::_Rb_tree_iterator<std::string> std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_insert_<std::string const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::string const&)
+                0x00014f78       0x94 ./src/ev3dev.o
+                0x00014f78                std::_Rb_tree_iterator<std::string> std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_insert_<std::string const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::string const&)
  .text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
-                0x00013254       0xa0 ./src/ev3dev.o
-                0x00013254                std::set<std::string, std::less<std::string>, std::allocator<std::string> >::set(std::initializer_list<std::string>, std::less<std::string> const&, std::allocator<std::string> const&)
-                0x00013254                std::set<std::string, std::less<std::string>, std::allocator<std::string> >::set(std::initializer_list<std::string>, std::less<std::string> const&, std::allocator<std::string> const&)
+                0x0001500c       0xa0 ./src/ev3dev.o
+                0x0001500c                std::set<std::string, std::less<std::string>, std::allocator<std::string> >::set(std::initializer_list<std::string>, std::less<std::string> const&, std::allocator<std::string> const&)
+                0x0001500c                std::set<std::string, std::less<std::string>, std::allocator<std::string> >::set(std::initializer_list<std::string>, std::less<std::string> const&, std::allocator<std::string> const&)
  .text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
-                0x000132f4       0xfc ./src/ev3dev.o
-                0x000132f4                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_copy(std::_Rb_tree_node<std::string> const*, std::_Rb_tree_node<std::string>*)
+                0x000150ac       0xfc ./src/ev3dev.o
+                0x000150ac                std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_copy(std::_Rb_tree_node<std::string> const*, std::_Rb_tree_node<std::string>*)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
-                0x000133f0       0xf0 ./src/ev3dev.o
-                0x000133f0                std::_Rb_tree_iterator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > const&)
+                0x000151a8       0xf0 ./src/ev3dev.o
+                0x000151a8                std::_Rb_tree_iterator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x000134e0       0xb0 ./src/ev3dev.o
-                0x000134e0                std::_Rb_tree_iterator<std::pair<std::string const, std::string const> > std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_insert_<std::pair<std::string const, std::string const> const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, std::string const> const&)
+                0x00015298       0xb0 ./src/ev3dev.o
+                0x00015298                std::_Rb_tree_iterator<std::pair<std::string const, std::string const> > std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_insert_<std::pair<std::string const, std::string const> const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, std::string const> const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x00013590       0x98 ./src/ev3dev.o
-                0x00013590                std::_Rb_tree_iterator<std::pair<std::string const, int> > std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_insert_<std::pair<std::string const, int> const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, int> const&)
+                0x00015348       0x98 ./src/ev3dev.o
+                0x00015348                std::_Rb_tree_iterator<std::pair<std::string const, int> > std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_insert_<std::pair<std::string const, int> const&>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<std::string const, int> const&)
  .text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
-                0x00013628       0x70 ./src/ev3dev.o
-                0x00013628                __real__ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
+                0x000153e0       0x70 ./src/ev3dev.o
+                0x000153e0                __real__ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
  .text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
-                0x00013698       0xcc ./src/ev3dev.o
-                0x00013698                std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_get_insert_unique_pos(std::string const&)
+                0x00015450       0xcc ./src/ev3dev.o
+                0x00015450                std::_Rb_tree<std::string, std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::set<std::string, std::less<std::string>, std::allocator<std::string> > > > >::_M_get_insert_unique_pos(std::string const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00013764       0xcc ./src/ev3dev.o
-                0x00013764                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_get_insert_unique_pos(std::string const&)
+                0x0001551c       0xcc ./src/ev3dev.o
+                0x0001551c                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_get_insert_unique_pos(std::string const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00013830      0x168 ./src/ev3dev.o
-                0x00013830                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, std::string const> >, std::string const&)
+                0x000155e8      0x168 ./src/ev3dev.o
+                0x000155e8                std::_Rb_tree<std::string, std::pair<std::string const, std::string const>, std::_Select1st<std::pair<std::string const, std::string const> >, std::less<std::string>, std::allocator<std::pair<std::string const, std::string const> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, std::string const> >, std::string const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00013998       0xcc ./src/ev3dev.o
-                0x00013998                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_get_insert_unique_pos(std::string const&)
+                0x00015750       0xcc ./src/ev3dev.o
+                0x00015750                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_get_insert_unique_pos(std::string const&)
  .text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00013a64      0x168 ./src/ev3dev.o
-                0x00013a64                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, int> >, std::string const&)
- .text          0x00013bcc        0x0 ./src/main.o
- .text          0x00013bcc      0xf80 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
-                0x00013bcc                __sync_fetch_and_add_4
-                0x00013c04                __sync_fetch_and_sub_4
-                0x00013c3c                __sync_fetch_and_or_4
-                0x00013c74                __sync_fetch_and_and_4
-                0x00013cac                __sync_fetch_and_xor_4
-                0x00013ce4                __sync_fetch_and_nand_4
-                0x00013d20                __sync_fetch_and_add_2
-                0x00013d84                __sync_fetch_and_sub_2
-                0x00013de8                __sync_fetch_and_or_2
-                0x00013e4c                __sync_fetch_and_and_2
-                0x00013eb0                __sync_fetch_and_xor_2
-                0x00013f14                __sync_fetch_and_nand_2
-                0x00013f7c                __sync_fetch_and_add_1
-                0x00013fdc                __sync_fetch_and_sub_1
-                0x0001403c                __sync_fetch_and_or_1
-                0x0001409c                __sync_fetch_and_and_1
-                0x000140fc                __sync_fetch_and_xor_1
-                0x0001415c                __sync_fetch_and_nand_1
-                0x000141c0                __sync_add_and_fetch_4
-                0x000141f8                __sync_sub_and_fetch_4
-                0x00014230                __sync_or_and_fetch_4
-                0x00014268                __sync_and_and_fetch_4
-                0x000142a0                __sync_xor_and_fetch_4
-                0x000142d8                __sync_nand_and_fetch_4
-                0x00014314                __sync_add_and_fetch_2
-                0x00014380                __sync_sub_and_fetch_2
-                0x000143ec                __sync_or_and_fetch_2
-                0x00014458                __sync_and_and_fetch_2
-                0x000144c4                __sync_xor_and_fetch_2
-                0x00014530                __sync_nand_and_fetch_2
-                0x000145a0                __sync_add_and_fetch_1
-                0x00014608                __sync_sub_and_fetch_1
-                0x00014670                __sync_or_and_fetch_1
-                0x000146d8                __sync_and_and_fetch_1
-                0x00014740                __sync_xor_and_fetch_1
-                0x000147a8                __sync_nand_and_fetch_1
-                0x00014814                __sync_val_compare_and_swap_4
-                0x00014860                __sync_val_compare_and_swap_2
-                0x000148e0                __sync_val_compare_and_swap_1
-                0x00014954                __sync_bool_compare_and_swap_4
-                0x00014980                __sync_bool_compare_and_swap_2
-                0x000149a0                __sync_bool_compare_and_swap_1
-                0x000149c0                __sync_synchronize
-                0x000149d4                __sync_lock_test_and_set_4
-                0x00014a0c                __sync_lock_test_and_set_2
-                0x00014a6c                __sync_lock_test_and_set_1
-                0x00014ac8                __sync_lock_release_8
-                0x00014aec                __sync_lock_release_4
-                0x00014b0c                __sync_lock_release_2
-                0x00014b2c                __sync_lock_release_1
- .text          0x00014b4c       0x68 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
-                0x00014b4c                __libc_csu_init
-                0x00014bb0                __libc_csu_fini
- .text          0x00014bb4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
- .text          0x00014bb4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
+                0x0001581c      0x168 ./src/ev3dev.o
+                0x0001581c                std::_Rb_tree<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::string const, int> >, std::string const&)
+ .text          0x00015984        0x0 ./src/main.o
+ .text._ZNSt5mutex4lockEv
+                0x00015984       0x1c ./src/main.o
+                0x00015984                std::mutex::lock()
+ .text._ZN6ev3dev8intercom3msgEPKc
+                0x000159a0       0x98 ./src/main.o
+                0x000159a0                ev3dev::intercom::msg(char const*)
+ .text          0x00015a38      0xf80 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+                0x00015a38                __sync_fetch_and_add_4
+                0x00015a70                __sync_fetch_and_sub_4
+                0x00015aa8                __sync_fetch_and_or_4
+                0x00015ae0                __sync_fetch_and_and_4
+                0x00015b18                __sync_fetch_and_xor_4
+                0x00015b50                __sync_fetch_and_nand_4
+                0x00015b8c                __sync_fetch_and_add_2
+                0x00015bf0                __sync_fetch_and_sub_2
+                0x00015c54                __sync_fetch_and_or_2
+                0x00015cb8                __sync_fetch_and_and_2
+                0x00015d1c                __sync_fetch_and_xor_2
+                0x00015d80                __sync_fetch_and_nand_2
+                0x00015de8                __sync_fetch_and_add_1
+                0x00015e48                __sync_fetch_and_sub_1
+                0x00015ea8                __sync_fetch_and_or_1
+                0x00015f08                __sync_fetch_and_and_1
+                0x00015f68                __sync_fetch_and_xor_1
+                0x00015fc8                __sync_fetch_and_nand_1
+                0x0001602c                __sync_add_and_fetch_4
+                0x00016064                __sync_sub_and_fetch_4
+                0x0001609c                __sync_or_and_fetch_4
+                0x000160d4                __sync_and_and_fetch_4
+                0x0001610c                __sync_xor_and_fetch_4
+                0x00016144                __sync_nand_and_fetch_4
+                0x00016180                __sync_add_and_fetch_2
+                0x000161ec                __sync_sub_and_fetch_2
+                0x00016258                __sync_or_and_fetch_2
+                0x000162c4                __sync_and_and_fetch_2
+                0x00016330                __sync_xor_and_fetch_2
+                0x0001639c                __sync_nand_and_fetch_2
+                0x0001640c                __sync_add_and_fetch_1
+                0x00016474                __sync_sub_and_fetch_1
+                0x000164dc                __sync_or_and_fetch_1
+                0x00016544                __sync_and_and_fetch_1
+                0x000165ac                __sync_xor_and_fetch_1
+                0x00016614                __sync_nand_and_fetch_1
+                0x00016680                __sync_val_compare_and_swap_4
+                0x000166cc                __sync_val_compare_and_swap_2
+                0x0001674c                __sync_val_compare_and_swap_1
+                0x000167c0                __sync_bool_compare_and_swap_4
+                0x000167ec                __sync_bool_compare_and_swap_2
+                0x0001680c                __sync_bool_compare_and_swap_1
+                0x0001682c                __sync_synchronize
+                0x00016840                __sync_lock_test_and_set_4
+                0x00016878                __sync_lock_test_and_set_2
+                0x000168d8                __sync_lock_test_and_set_1
+                0x00016934                __sync_lock_release_8
+                0x00016958                __sync_lock_release_4
+                0x00016978                __sync_lock_release_2
+                0x00016998                __sync_lock_release_1
+ .text          0x000169b8       0x68 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x000169b8                __libc_csu_init
+                0x00016a1c                __libc_csu_fini
+ .text          0x00016a20        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .text          0x00016a20        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
  *(.gnu.warning)
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00014bb4       0x30 linker stubs
-                0x00014bb4                ___ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8__from_arm
-                0x00014bb4                std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-                0x00014bc0                char* std::string::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
-                0x00014bc0                ___ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag_from_arm
-                0x00014bcc                ___ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev_from_arm
-                0x00014bcc                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
-                0x00014bd8                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
-                0x00014bd8                ___ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev_from_arm
- *fill*         0x00014be4        0x4 
+ .glue_7        0x00016a20       0x30 linker stubs
+                0x00016a20                ___ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8__from_arm
+                0x00016a20                std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+                0x00016a2c                char* std::string::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
+                0x00016a2c                ___ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag_from_arm
+                0x00016a38                ___ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev_from_arm
+                0x00016a38                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+                0x00016a44                std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+                0x00016a44                ___ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev_from_arm
  .glue_7.__stub
-                0x00014be8       0x20 linker stubs
+                0x00016a50       0x20 linker stubs
  *(.vfp11_veneer)
  .vfp11_veneer  0x00000000        0x0 linker stubs
  *(.v4_bx)
  .v4_bx         0x00000000        0x0 linker stubs
 
-.fini           0x00014c08        0x8
+.fini           0x00016a70        0x8
  *(SORT(.fini))
- .fini          0x00014c08        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
-                0x00014c08                _fini
- .fini          0x00014c0c        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
-                0x00014c10                PROVIDE (__etext, .)
-                0x00014c10                PROVIDE (_etext, .)
-                0x00014c10                PROVIDE (etext, .)
+ .fini          0x00016a70        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
+                0x00016a70                _fini
+ .fini          0x00016a74        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
+                0x00016a78                PROVIDE (__etext, .)
+                0x00016a78                PROVIDE (_etext, .)
+                0x00016a78                PROVIDE (etext, .)
 
-.rodata         0x00014c10      0xaf8
+.rodata         0x00016a78      0xea0
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata.cst4   0x00014c10        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x00014c10                _IO_stdin_used
- *fill*         0x00014c14        0x4 
- .rodata        0x00014c18      0x180 ./src/Control.o
-                0x00014c70                vtable for ev3dev::Control
-                0x00014d78                typeinfo name for ev3dev::Control
-                0x00014d8c                typeinfo for ev3dev::Control
+ .rodata.cst4   0x00016a78        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x00016a78                _IO_stdin_used
  .rodata._ZTIN9__gnu_cxx7__mutexE
-                0x00014d98        0x8 ./src/Control.o
-                0x00014d98                typeinfo for __gnu_cxx::__mutex
+                0x00016a7c        0x8 ./src/Control.o
+                0x00016a7c                typeinfo for __gnu_cxx::__mutex
  .rodata._ZTSN9__gnu_cxx7__mutexE
-                0x00014da0       0x18 ./src/Control.o
-                0x00014da0                typeinfo name for __gnu_cxx::__mutex
+                0x00016a84       0x18 ./src/Control.o
+                0x00016a84                typeinfo name for __gnu_cxx::__mutex
  .rodata._ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE
-                0x00014db8        0xc ./src/Control.o
-                0x00014db8                typeinfo for std::_Mutex_base<(__gnu_cxx::_Lock_policy)1>
+                0x00016a9c        0xc ./src/Control.o
+                0x00016a9c                typeinfo for std::_Mutex_base<(__gnu_cxx::_Lock_policy)1>
  .rodata._ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE
-                0x00014dc4       0x30 ./src/Control.o
-                0x00014dc4                typeinfo name for std::_Mutex_base<(__gnu_cxx::_Lock_policy)1>
+                0x00016aa8       0x30 ./src/Control.o
+                0x00016aa8                typeinfo name for std::_Mutex_base<(__gnu_cxx::_Lock_policy)1>
  .rodata._ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE
-                0x00014df4       0x18 ./src/Control.o
-                0x00014df4                typeinfo for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
+                0x00016ad8       0x18 ./src/Control.o
+                0x00016ad8                typeinfo for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
  .rodata._ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE
-                0x00014e0c       0x34 ./src/Control.o
-                0x00014e0c                typeinfo name for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
+                0x00016af0       0x34 ./src/Control.o
+                0x00016af0                typeinfo name for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
  .rodata._ZTINSt6thread10_Impl_baseE
-                0x00014e40        0x8 ./src/Control.o
-                0x00014e40                typeinfo for std::thread::_Impl_base
+                0x00016b24        0x8 ./src/Control.o
+                0x00016b24                typeinfo for std::thread::_Impl_base
  .rodata._ZTSNSt6thread10_Impl_baseE
-                0x00014e48       0x18 ./src/Control.o
-                0x00014e48                typeinfo name for std::thread::_Impl_base
+                0x00016b2c       0x18 ./src/Control.o
+                0x00016b2c                typeinfo name for std::thread::_Impl_base
  .rodata._ZTISt19_Sp_make_shared_tag
-                0x00014e60        0x8 ./src/Control.o
-                0x00014e60                typeinfo for std::_Sp_make_shared_tag
+                0x00016b44        0x8 ./src/Control.o
+                0x00016b44                typeinfo for std::_Sp_make_shared_tag
  .rodata._ZTSSt19_Sp_make_shared_tag
-                0x00014e68       0x18 ./src/Control.o
-                0x00014e68                typeinfo name for std::_Sp_make_shared_tag
+                0x00016b4c       0x18 ./src/Control.o
+                0x00016b4c                typeinfo name for std::_Sp_make_shared_tag
+ *fill*         0x00016b64        0x4 
  .rodata._ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE
-                0x00014e80       0x20 ./src/Control.o
-                0x00014e80                vtable for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
+                0x00016b68       0x20 ./src/Control.o
+                0x00016b68                vtable for std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>
  .rodata._ZTVNSt6thread10_Impl_baseE
-                0x00014ea0       0x18 ./src/Control.o
-                0x00014ea0                vtable for std::thread::_Impl_base
+                0x00016b88       0x18 ./src/Control.o
+                0x00016b88                vtable for std::thread::_Impl_base
+ .rodata        0x00016ba0      0x3f0 ./src/Control.o
+                0x00016c48                vtable for ev3dev::Control
+                0x00016f70                typeinfo name for ev3dev::Control
+                0x00016f84                typeinfo for ev3dev::Control
  .rodata.str1.4
-                0x00014eb8       0xc5 ./src/Control.o
-                                 0xc8 (size before relaxing)
- *fill*         0x00014f7d        0x3 
+                0x00016f90      0x211 ./src/Control.o
+                                0x228 (size before relaxing)
+ *fill*         0x000171a1        0x3 
  .rodata._ZTISt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE
-                0x00014f80        0xc ./src/ev3dev.o
-                0x00014f80                typeinfo for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
+                0x000171a4        0xc ./src/ev3dev.o
+                0x000171a4                typeinfo for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
  .rodata._ZTSSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE
-                0x00014f8c       0x58 ./src/ev3dev.o
-                0x00014f8c                typeinfo name for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
- *fill*         0x00014fe4        0x4 
+                0x000171b0       0x58 ./src/ev3dev.o
+                0x000171b0                typeinfo name for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
  .rodata._ZTVSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE
-                0x00014fe8       0x20 ./src/ev3dev.o
-                0x00014fe8                vtable for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
- .rodata        0x00015008       0xd8 ./src/ev3dev.o
-                0x00015008                vtable for ev3dev::remote_control
-                0x000150b8                typeinfo name for ev3dev::remote_control
-                0x000150d4                typeinfo for ev3dev::remote_control
+                0x00017208       0x20 ./src/ev3dev.o
+                0x00017208                vtable for std::_Sp_counted_ptr<ev3dev::button::file_descriptor*, (__gnu_cxx::_Lock_policy)1>
+ .rodata        0x00017228       0xd8 ./src/ev3dev.o
+                0x00017228                vtable for ev3dev::remote_control
+                0x000172d8                typeinfo name for ev3dev::remote_control
+                0x000172f4                typeinfo for ev3dev::remote_control
  .rodata.str1.4
-                0x000150e0      0x5d3 ./src/ev3dev.o
+                0x00017300      0x5af ./src/ev3dev.o
                                 0x658 (size before relaxing)
- *fill*         0x000156b3        0x1 
+ *fill*         0x000178af        0x1 
  .rodata.str1.4
-                0x000156b4       0x54 ./src/main.o
-                                 0x88 (size before relaxing)
+                0x000178b0       0x68 ./src/main.o
+                                 0x9c (size before relaxing)
 
 .rodata1
  *(.rodata1)
 
-.ARM.extab      0x00015708     0x1024
+.ARM.extab      0x00017918     0x1234
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00015708        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
- .ARM.extab     0x00015708       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .ARM.extab     0x00017918        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .ARM.extab     0x00017918       0x24 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x0001572c        0xc ./src/Control.o
+                0x0001793c        0xc ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00015738        0x0 ./src/Control.o
- .ARM.extab     0x00015738      0x1c0 ./src/Control.o
+                0x00017948        0x0 ./src/Control.o
+ .ARM.extab     0x00017948      0x394 ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x000158f8        0x0 ./src/Control.o
+                0x00017cdc        0x0 ./src/Control.o
  .ARM.extab.text.unlikely
-                0x000158f8        0xc ./src/Control.o
+                0x00017cdc        0xc ./src/Control.o
  .ARM.extab.text._ZNSt6thread10_Impl_baseD2Ev
-                0x00015904        0x0 ./src/Control.o
+                0x00017ce8        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt6thread10_Impl_baseD0Ev
-                0x00015904        0x0 ./src/Control.o
+                0x00017ce8        0x0 ./src/Control.o
+ .ARM.extab.text._ZN6ev3dev6eventsD2Ev
+                0x00017ce8        0xc ./src/Control.o
  .ARM.extab.text._ZN6ev3dev6sensorD2Ev
-                0x00015904        0x0 ./src/Control.o
+                0x00017cf4        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
-                0x00015904        0x0 ./src/Control.o
+                0x00017cf4        0x0 ./src/Control.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
-                0x00015904        0xc ./src/Control.o
+                0x00017cf4        0xc ./src/Control.o
  .ARM.extab.text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
-                0x00015910        0xc ./src/Control.o
+                0x00017d00        0xc ./src/Control.o
  .ARM.extab.text.startup
-                0x0001591c        0x0 ./src/Control.o
+                0x00017d0c        0xc ./src/Control.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x0001591c        0x0 ./src/ev3dev.o
+                0x00017d18        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE14_M_get_deleterERKSt9type_info
-                0x0001591c        0x0 ./src/ev3dev.o
+                0x00017d18        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x0001591c        0x0 ./src/ev3dev.o
+                0x00017d18        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x0001591c        0xc ./src/ev3dev.o
+                0x00017d18        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIfSaIfEED2Ev
-                0x00015928        0x0 ./src/ev3dev.o
+                0x00017d24        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EED2Ev
-                0x00015928        0x0 ./src/ev3dev.o
+                0x00017d24        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev6buttonD2Ev
-                0x00015928        0xc ./src/ev3dev.o
+                0x00017d24        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
-                0x00015934        0xc ./src/ev3dev.o
+                0x00017d30        0xc ./src/ev3dev.o
  .ARM.extab.text.unlikely
-                0x00015940        0xc ./src/ev3dev.o
+                0x00017d3c        0xc ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev12power_supplyD2Ev
-                0x0001594c        0x0 ./src/ev3dev.o
+                0x00017d48        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZN6ev3dev3ledD2Ev
-                0x0001594c        0x0 ./src/ev3dev.o
+                0x00017d48        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev
-                0x0001594c        0x0 ./src/ev3dev.o
+                0x00017d48        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
-                0x0001594c        0x0 ./src/ev3dev.o
- .ARM.extab     0x0001594c      0xb14 ./src/ev3dev.o
+                0x00017d48        0x0 ./src/ev3dev.o
+ .ARM.extab     0x00017d48      0xb14 ./src/ev3dev.o
  .ARM.extab.text._ZNSt12system_errorC2ESt10error_code
-                0x00016460       0x18 ./src/ev3dev.o
+                0x0001885c       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt12system_errorC2ESt10error_codeRKSs
-                0x00016478       0x34 ./src/ev3dev.o
+                0x00018874       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt4pairIKSsS0_ED2Ev
-                0x000164ac        0x0 ./src/ev3dev.o
+                0x000188a8        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
-                0x000164ac       0x18 ./src/ev3dev.o
+                0x000188a8       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
-                0x000164c4       0x18 ./src/ev3dev.o
+                0x000188c0       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
-                0x000164dc       0x18 ./src/ev3dev.o
+                0x000188d8       0x18 ./src/ev3dev.o
  .ARM.extab.text._ZNKSt8functionIFvbEEclEb
-                0x000164f4        0xc ./src/ev3dev.o
+                0x000188f0        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
-                0x00016500        0x0 ./src/ev3dev.o
+                0x000188fc        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
-                0x00016500        0x0 ./src/ev3dev.o
+                0x000188fc        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
-                0x00016500        0xc ./src/ev3dev.o
+                0x000188fc        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x0001650c        0xc ./src/ev3dev.o
+                0x00018908        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
-                0x00016518        0x0 ./src/ev3dev.o
+                0x00018914        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00016518        0xc ./src/ev3dev.o
+                0x00018914        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
-                0x00016524        0x0 ./src/ev3dev.o
+                0x00018920        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
-                0x00016524        0x0 ./src/ev3dev.o
+                0x00018920        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
-                0x00016524        0xc ./src/ev3dev.o
+                0x00018920        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
-                0x00016530       0x2c ./src/ev3dev.o
+                0x0001892c       0x2c ./src/ev3dev.o
  .ARM.extab.text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
-                0x0001655c       0x1c ./src/ev3dev.o
+                0x00018958       0x1c ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
-                0x00016578       0x4c ./src/ev3dev.o
+                0x00018974       0x4c ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
-                0x000165c4       0x34 ./src/ev3dev.o
+                0x000189c0       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x000165f8       0x34 ./src/ev3dev.o
+                0x000189f4       0x34 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x0001662c       0x2c ./src/ev3dev.o
+                0x00018a28       0x2c ./src/ev3dev.o
  .ARM.extab.text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
-                0x00016658        0x0 ./src/ev3dev.o
+                0x00018a54        0x0 ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
-                0x00016658        0xc ./src/ev3dev.o
+                0x00018a54        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00016664        0xc ./src/ev3dev.o
+                0x00018a60        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016670        0xc ./src/ev3dev.o
+                0x00018a6c        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x0001667c        0xc ./src/ev3dev.o
+                0x00018a78        0xc ./src/ev3dev.o
  .ARM.extab.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016688        0xc ./src/ev3dev.o
+                0x00018a84        0xc ./src/ev3dev.o
  .ARM.extab.text.startup
-                0x00016694       0x50 ./src/ev3dev.o
+                0x00018a90       0x50 ./src/ev3dev.o
+ .ARM.extab.text.unlikely
+                0x00018ae0        0x0 ./src/main.o
+ .ARM.extab.text._ZNSt5mutex4lockEv
+                0x00018ae0        0xc ./src/main.o
+ .ARM.extab.text._ZN6ev3dev8intercom3msgEPKc
+                0x00018aec        0x0 ./src/main.o
  .ARM.extab.text.startup
-                0x000166e4       0x30 ./src/main.o
- .ARM.extab     0x00016714       0x18 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
- .ARM.extab     0x0001672c        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
-                0x0001672c                PROVIDE (__exidx_start, .)
+                0x00018aec       0x48 ./src/main.o
+ .ARM.extab     0x00018b34       0x18 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+ .ARM.extab     0x00018b4c        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x00018b4c                PROVIDE (__exidx_start, .)
 
-.ARM.exidx      0x0001672c      0x4a8
+.ARM.exidx      0x00018b4c      0x560
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0001675c        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
- .ARM.exidx     0x00016764       0x20 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .ARM.exidx     0x00018b84        0x8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .ARM.exidx     0x00018b8c       0x20 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x00016814        0x8 ./src/Control.o
+                0x00018cd4        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x0001681c        0x8 ./src/Control.o
- .ARM.exidx     0x00016784       0x90 ./src/Control.o
-                                 0x98 (size before relaxing)
+                0x00018cdc        0x8 ./src/Control.o
+ .ARM.exidx     0x00018bac      0x128 ./src/Control.o
+                                0x160 (size before relaxing)
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x00016824        0x8 ./src/Control.o
+                0x00018ce4        0x8 ./src/Control.o
  .ARM.exidx.text.unlikely
-                0x0001672c        0x8 ./src/Control.o
+                0x00018b4c        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt6thread10_Impl_baseD2Ev
-                0x0001682c        0x8 ./src/Control.o
+                0x00018cec        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt6thread10_Impl_baseD0Ev
-                0x00016834        0x0 ./src/Control.o
+                0x00018cf4        0x0 ./src/Control.o
                                   0x8 (size before relaxing)
+ .ARM.exidx.text._ZN6ev3dev6eventsD2Ev
+                0x00018cf4        0x8 ./src/Control.o
  .ARM.exidx.text._ZN6ev3dev6sensorD2Ev
-                0x00016834        0x8 ./src/Control.o
+                0x00018cfc        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv
-                0x0001683c        0x8 ./src/Control.o
+                0x00018d04        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE
-                0x00016844        0x8 ./src/Control.o
+                0x00018d0c        0x8 ./src/Control.o
  .ARM.exidx.text._ZNKSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE4findERKSs
-                0x0001684c        0x8 ./src/Control.o
+                0x00018d14        0x8 ./src/Control.o
  .ARM.exidx.text.startup
-                0x0001673c        0x8 ./src/Control.o
+                0x00018b64        0x8 ./src/Control.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED2Ev
-                0x00016a44        0x8 ./src/ev3dev.o
+                0x00018f0c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE14_M_get_deleterERKSt9type_info
-                0x00016a4c        0x0 ./src/ev3dev.o
+                0x00018f14        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EED0Ev
-                0x00016a4c        0x8 ./src/ev3dev.o
+                0x00018f14        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_destroyEv
-                0x00016a54        0x8 ./src/ev3dev.o
+                0x00018f1c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIfSaIfEED2Ev
-                0x00016a5c        0x8 ./src/ev3dev.o
+                0x00018f24        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EED2Ev
-                0x00016a64        0x0 ./src/ev3dev.o
+                0x00018f2c        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN6ev3dev6buttonD2Ev
-                0x00016a64        0x8 ./src/ev3dev.o
+                0x00018f2c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt15_Sp_counted_ptrIPN6ev3dev6button15file_descriptorELN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv
-                0x00016a6c        0x8 ./src/ev3dev.o
+                0x00018f34        0x8 ./src/ev3dev.o
  .ARM.exidx.text.unlikely
-                0x00016734        0x8 ./src/ev3dev.o
+                0x00018b54        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZN6ev3dev12power_supplyD2Ev
-                0x00016a74        0x8 ./src/ev3dev.o
+                0x00018f3c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZN6ev3dev3ledD2Ev
-                0x00016a7c        0x0 ./src/ev3dev.o
+                0x00018f44        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev
-                0x00016a7c        0x0 ./src/ev3dev.o
+                0x00018f44        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev
-                0x00016a7c        0x0 ./src/ev3dev.o
+                0x00018f44        0x0 ./src/ev3dev.o
                                   0x8 (size before relaxing)
- .ARM.exidx     0x00016854      0x1f0 ./src/ev3dev.o
+ .ARM.exidx     0x00018d1c      0x1f0 ./src/ev3dev.o
                                 0x200 (size before relaxing)
  .ARM.exidx.text._ZNSt12system_errorC2ESt10error_code
-                0x00016a7c        0x8 ./src/ev3dev.o
+                0x00018f44        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt12system_errorC2ESt10error_codeRKSs
-                0x00016a84        0x8 ./src/ev3dev.o
+                0x00018f4c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt4pairIKSsS0_ED2Ev
-                0x00016a8c        0x8 ./src/ev3dev.o
+                0x00018f54        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_
-                0x00016a94        0x8 ./src/ev3dev.o
+                0x00018f5c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIPN6ev3dev3ledESaIS2_EEC2ESt16initializer_listIS2_ERKS3_
-                0x00016a9c        0x8 ./src/ev3dev.o
+                0x00018f64        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIfSaIfEEC2ESt16initializer_listIfERKS0_
-                0x00016aa4        0x8 ./src/ev3dev.o
+                0x00018f6c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNKSt8functionIFvbEEclEb
-                0x00016aac        0x8 ./src/ev3dev.o
+                0x00018f74        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev
-                0x00016ab4        0x8 ./src/ev3dev.o
+                0x00018f7c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt4pairIKSsSt3setISsSt4lessISsESaISsEEED2Ev
-                0x00016abc        0x8 ./src/ev3dev.o
+                0x00018f84        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E
-                0x00016ac4        0x8 ./src/ev3dev.o
+                0x00018f8c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00016acc        0x8 ./src/ev3dev.o
+                0x00018f94        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt3mapISsKSsSt4lessISsESaISt4pairIS0_S0_EEED2Ev
-                0x00016ad4        0x8 ./src/ev3dev.o
+                0x00018f9c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-                0x00016adc        0x8 ./src/ev3dev.o
+                0x00018fa4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEED2Ev
-                0x00016ae4        0x8 ./src/ev3dev.o
+                0x00018fac        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt6vectorIcSaIcEE17_M_default_appendEj
-                0x00016aec        0x8 ./src/ev3dev.o
+                0x00018fb4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE24_M_get_insert_unique_posERKSs
-                0x00016af4        0x8 ./src/ev3dev.o
+                0x00018fbc        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE10_M_insert_IRKSsEESt17_Rb_tree_iteratorISsEPSt18_Rb_tree_node_baseSC_OT_
-                0x00016afc        0x8 ./src/ev3dev.o
+                0x00018fc4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt3setISsSt4lessISsESaISsEEC2ESt16initializer_listISsERKS1_RKS2_
-                0x00016b04        0x8 ./src/ev3dev.o
+                0x00018fcc        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSsSt9_IdentityISsESt4lessISsESaISsEE7_M_copyEPKSt13_Rb_tree_nodeISsEPS7_
-                0x00016b0c        0x8 ./src/ev3dev.o
+                0x00018fd4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE10_M_insert_IRKS7_EESt17_Rb_tree_iteratorIS7_EPSt18_Rb_tree_node_baseSI_OT_
-                0x00016b14        0x8 ./src/ev3dev.o
+                0x00018fdc        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x00016b1c        0x8 ./src/ev3dev.o
+                0x00018fe4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE10_M_insert_IRKS2_EESt17_Rb_tree_iteratorIS2_EPSt18_Rb_tree_node_baseSF_OT_
-                0x00016b24        0x8 ./src/ev3dev.o
+                0x00018fec        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag
-                0x00016b2c        0x8 ./src/ev3dev.o
+                0x00018ff4        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsSt3setISsSt4lessISsESaISsEEESt10_Select1stIS7_ES4_SaIS7_EE24_M_get_insert_unique_posERS1_
-                0x00016b34        0x8 ./src/ev3dev.o
+                0x00018ffc        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00016b3c        0x8 ./src/ev3dev.o
+                0x00019004        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsS1_ESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016b44        0x8 ./src/ev3dev.o
+                0x0001900c        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
-                0x00016b4c        0x8 ./src/ev3dev.o
+                0x00019014        0x8 ./src/ev3dev.o
  .ARM.exidx.text._ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
-                0x00016b54        0x8 ./src/ev3dev.o
+                0x0001901c        0x8 ./src/ev3dev.o
  .ARM.exidx.text.startup
-                0x00016744        0x8 ./src/ev3dev.o
+                0x00018b6c        0x8 ./src/ev3dev.o
+ .ARM.exidx.text.unlikely
+                0x00018b5c        0x8 ./src/main.o
+ .ARM.exidx.text._ZNSt5mutex4lockEv
+                0x00019024        0x8 ./src/main.o
+ .ARM.exidx.text._ZN6ev3dev8intercom3msgEPKc
+                0x0001902c        0x8 ./src/main.o
  .ARM.exidx.text.startup
-                0x0001674c       0x10 ./src/main.o
- .ARM.exidx     0x00016b5c       0x60 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+                0x00018b74       0x10 ./src/main.o
+ .ARM.exidx     0x00019034       0x60 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
                                 0x190 (size before relaxing)
- .ARM.exidx     0x00016bbc       0x18 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+ .ARM.exidx     0x00019094       0x18 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
                                  0x10 (size before relaxing)
-                0x00016bd4                PROVIDE (__exidx_end, .)
+                0x000190ac                PROVIDE (__exidx_end, .)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x00016bd4        0x4
+.eh_frame       0x000190ac        0x4
  *(.eh_frame)
- .eh_frame      0x00016bd4        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .eh_frame      0x000190ac        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -1109,8 +1149,8 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
 
 .exception_ranges
  *(.exception_ranges .exception_ranges*)
-                0x00016bd8                . = (ALIGN (0x8000) - ((0x8000 - .) & 0x7fff))
-                0x0001f000                . = DATA_SEGMENT_ALIGN (0x8000, 0x1000)
+                0x000190b0                . = (ALIGN (0x8000) - ((0x8000 - .) & 0x7fff))
+                0x000210b0                . = DATA_SEGMENT_ALIGN (0x8000, 0x1000)
 
 .eh_frame
  *(.eh_frame)
@@ -1132,27 +1172,27 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
  *(.tbss .tbss.* .gnu.linkonce.tb.*)
  *(.tcommon)
 
-.preinit_array  0x0001f000        0x0
-                0x0001f000                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x000210b0        0x0
+                0x000210b0                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x0001f000                PROVIDE (__preinit_array_end, .)
+                0x000210b0                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0001f000       0x10
-                0x0001f000                PROVIDE (__init_array_start, .)
+.init_array     0x000210b0       0x10
+                0x000210b0                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x0001f000        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
- .init_array    0x0001f004        0x4 ./src/Control.o
- .init_array    0x0001f008        0x4 ./src/ev3dev.o
- .init_array    0x0001f00c        0x4 ./src/main.o
-                0x0001f010                PROVIDE (__init_array_end, .)
+ .init_array    0x000210b0        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .init_array    0x000210b4        0x4 ./src/Control.o
+ .init_array    0x000210b8        0x4 ./src/ev3dev.o
+ .init_array    0x000210bc        0x4 ./src/main.o
+                0x000210c0                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0001f010        0x4
-                0x0001f010                PROVIDE (__fini_array_start, .)
+.fini_array     0x000210c0        0x4
+                0x000210c0                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array)
- .fini_array    0x0001f010        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
-                0x0001f014                PROVIDE (__fini_array_end, .)
+ .fini_array    0x000210c0        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+                0x000210c4                PROVIDE (__fini_array_end, .)
 
 .ctors
  *crtbegin.o(.ctors)
@@ -1168,192 +1208,191 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
  *(SORT(.dtors.*))
  *(.dtors)
 
-.jcr            0x0001f014        0x4
+.jcr            0x000210c4        0x4
  *(.jcr)
- .jcr           0x0001f014        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
- .jcr           0x0001f014        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .jcr           0x000210c4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ .jcr           0x000210c4        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
 
 .data.rel.ro
  *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
  *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
 
-.dynamic        0x0001f018      0x108
+.dynamic        0x000210c8      0x108
  *(.dynamic)
- .dynamic       0x0001f018      0x108 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0001f018                _DYNAMIC
-                0x0001f120                . = DATA_SEGMENT_RELRO_END (., 0x0)
+ .dynamic       0x000210c8      0x108 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x000210c8                _DYNAMIC
+                0x000211d0                . = DATA_SEGMENT_RELRO_END (., 0x0)
 
-.got            0x0001f120      0x1dc
+.got            0x000211d0      0x1e0
  *(.got.plt)
- .got.plt       0x0001f120      0x1d8 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0001f120                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x000211d0      0x1dc c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x000211d0                _GLOBAL_OFFSET_TABLE_
  *(.igot.plt)
  .igot.plt      0x00000000        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
  *(.got)
- .got           0x0001f2f8        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .got           0x000213ac        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
  *(.igot)
 
-.data           0x0001f2fc        0x8
-                0x0001f2fc                PROVIDE (__data_start, .)
+.data           0x000213b0        0x8
+                0x000213b0                PROVIDE (__data_start, .)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0001f2fc        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0001f2fc                __data_start
-                0x0001f2fc                data_start
- .data          0x0001f300        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
- .data          0x0001f300        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
-                0x0001f300                __dso_handle
- .data          0x0001f304        0x0 ./src/Control.o
- .data          0x0001f304        0x0 ./src/ev3dev.o
- .data          0x0001f304        0x0 ./src/main.o
- .data          0x0001f304        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
- .data          0x0001f304        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
- .data          0x0001f304        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
- .data          0x0001f304        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
+ .data          0x000213b0        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x000213b0                __data_start
+                0x000213b0                data_start
+ .data          0x000213b4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
+ .data          0x000213b4        0x4 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+                0x000213b4                __dso_handle
+ .data          0x000213b8        0x0 ./src/Control.o
+ .data          0x000213b8        0x0 ./src/ev3dev.o
+ .data          0x000213b8        0x0 ./src/main.o
+ .data          0x000213b8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+ .data          0x000213b8        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+ .data          0x000213b8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .data          0x000213b8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
 
 .tm_clone_table
-                0x0001f304        0x0
+                0x000213b8        0x0
  .tm_clone_table
-                0x0001f304        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+                0x000213b8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
  .tm_clone_table
-                0x0001f304        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+                0x000213b8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
 
 .data1
  *(.data1)
-                0x0001f304                _edata = .
-                0x0001f304                PROVIDE (edata, .)
-                0x0001f304                . = .
-                0x0001f304                __bss_start = .
-                0x0001f304                __bss_start__ = .
+                0x000213b8                _edata = .
+                0x000213b8                PROVIDE (edata, .)
+                0x000213b8                . = .
+                0x000213b8                __bss_start = .
+                0x000213b8                __bss_start__ = .
 
-.bss            0x0001f308      0x6f0
+.bss            0x000213b8      0x8a4
  *(.dynbss)
- *fill*         0x0001f308        0x0 
- .dynbss        0x0001f308      0x2dc c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
-                0x0001f308                typeinfo for std::system_error@@GLIBCXX_3.4.11
-                0x0001f318                vtable for std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
-                0x0001f358                vtable for std::basic_ios<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f368                vtable for std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
-                0x0001f390                vtable for std::system_error@@GLIBCXX_3.4.11
-                0x0001f3a8                vtable for std::basic_filebuf<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f3e8                VTT for std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
-                0x0001f3f8                VTT for std::basic_ofstream<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f408                vtable for std::basic_ifstream<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f430                vtable for __cxxabiv1::__class_type_info@@CXXABI_1.3
-                0x0001f460                std::cout@@GLIBCXX_3.4
-                0x0001f4f0                vtable for __cxxabiv1::__si_class_type_info@@CXXABI_1.3
-                0x0001f520                VTT for std::basic_ifstream<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f530                vtable for __cxxabiv1::__vmi_class_type_info@@CXXABI_1.3
-                0x0001f560                vtable for std::basic_streambuf<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f5a0                std::string::_Rep::_S_empty_rep_storage@@GLIBCXX_3.4
-                0x0001f5b0                vtable for std::basic_ofstream<char, std::char_traits<char> >@@GLIBCXX_3.4
-                0x0001f5d8                typeinfo for std::invalid_argument@@GLIBCXX_3.4
+ .dynbss        0x000213b8      0x2dc c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+                0x000213b8                typeinfo for std::system_error@@GLIBCXX_3.4.11
+                0x000213c8                vtable for std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
+                0x00021408                vtable for std::basic_ios<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x00021418                vtable for std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
+                0x00021440                vtable for std::system_error@@GLIBCXX_3.4.11
+                0x00021458                vtable for std::basic_filebuf<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x00021498                VTT for std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >@@GLIBCXX_3.4
+                0x000214a8                VTT for std::basic_ofstream<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x000214b8                vtable for std::basic_ifstream<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x000214e0                vtable for __cxxabiv1::__class_type_info@@CXXABI_1.3
+                0x00021510                std::cout@@GLIBCXX_3.4
+                0x000215a0                vtable for __cxxabiv1::__si_class_type_info@@CXXABI_1.3
+                0x000215d0                VTT for std::basic_ifstream<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x000215e0                vtable for __cxxabiv1::__vmi_class_type_info@@CXXABI_1.3
+                0x00021610                vtable for std::basic_streambuf<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x00021650                std::string::_Rep::_S_empty_rep_storage@@GLIBCXX_3.4
+                0x00021660                vtable for std::basic_ofstream<char, std::char_traits<char> >@@GLIBCXX_3.4
+                0x00021688                typeinfo for std::invalid_argument@@GLIBCXX_3.4
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0001f5e4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
- .bss           0x0001f5e4        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
- .bss           0x0001f5e4        0x1 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
- *fill*         0x0001f5e5        0x3 
- .bss           0x0001f5e8       0x2c ./src/Control.o
- .bss           0x0001f614      0x3b8 ./src/ev3dev.o
-                0x0001f65c                ev3dev::led::red_left
-                0x0001f668                ev3dev::led::red_right
-                0x0001f674                ev3dev::led::green_left
-                0x0001f680                ev3dev::led::green_right
-                0x0001f694                ev3dev::infrared_sensor::mode_ir_remote
-                0x0001f6c8                ev3dev::button::back
-                0x0001f6f4                ev3dev::button::left
-                0x0001f720                ev3dev::button::right
-                0x0001f74c                ev3dev::button::up
-                0x0001f778                ev3dev::button::down
-                0x0001f7a4                ev3dev::button::enter
-                0x0001f800                ev3dev::sensor::nxt_i2c_sensor
-                0x0001f804                ev3dev::sensor::ev3_touch
-                0x0001f808                ev3dev::sensor::nxt_touch
-                0x0001f80c                ev3dev::sensor::ev3_color
-                0x0001f810                ev3dev::sensor::ev3_ultrasonic
-                0x0001f814                ev3dev::sensor::nxt_ultrasonic
-                0x0001f818                ev3dev::sensor::ev3_gyro
-                0x0001f81c                ev3dev::sensor::ev3_infrared
-                0x0001f824                ev3dev::sensor::nxt_light
-                0x0001f828                ev3dev::sensor::nxt_sound
-                0x0001f82c                ev3dev::sensor::nxt_analog
-                0x0001f830                ev3dev::motor::motor_medium
-                0x0001f834                ev3dev::motor::motor_large
-                0x0001f8a0                ev3dev::touch_sensor::mode_touch
-                0x0001f8a4                ev3dev::color_sensor::mode_col_reflect
-                0x0001f8a8                ev3dev::color_sensor::mode_col_ambient
-                0x0001f8ac                ev3dev::color_sensor::mode_col_color
-                0x0001f8b0                ev3dev::color_sensor::mode_ref_raw
-                0x0001f8b4                ev3dev::color_sensor::mode_rgb_raw
-                0x0001f8b8                ev3dev::ultrasonic_sensor::mode_us_dist_cm
-                0x0001f8bc                ev3dev::ultrasonic_sensor::mode_us_dist_in
-                0x0001f8c0                ev3dev::ultrasonic_sensor::mode_us_listen
-                0x0001f8c4                ev3dev::ultrasonic_sensor::mode_us_si_cm
-                0x0001f8c8                ev3dev::ultrasonic_sensor::mode_us_si_in
-                0x0001f8cc                ev3dev::gyro_sensor::mode_gyro_ang
-                0x0001f8d0                ev3dev::gyro_sensor::mode_gyro_rate
-                0x0001f8d4                ev3dev::gyro_sensor::mode_gyro_fas
-                0x0001f8d8                ev3dev::gyro_sensor::mode_gyro_g_a
-                0x0001f8dc                ev3dev::gyro_sensor::mode_gyro_cal
-                0x0001f8e0                ev3dev::infrared_sensor::mode_ir_prox
-                0x0001f8e4                ev3dev::infrared_sensor::mode_ir_seek
-                0x0001f8e8                ev3dev::infrared_sensor::mode_ir_rem_a
-                0x0001f8ec                ev3dev::infrared_sensor::mode_ir_cal
-                0x0001f8f0                ev3dev::sound_sensor::mode_db
-                0x0001f8f4                ev3dev::sound_sensor::mode_dba
-                0x0001f8f8                ev3dev::light_sensor::mode_reflect
-                0x0001f8fc                ev3dev::light_sensor::mode_ambient
-                0x0001f900                ev3dev::motor::command_run_forever
-                0x0001f904                ev3dev::motor::command_run_to_abs_pos
-                0x0001f908                ev3dev::motor::command_run_to_rel_pos
-                0x0001f90c                ev3dev::motor::command_run_timed
-                0x0001f910                ev3dev::motor::command_run_direct
-                0x0001f914                ev3dev::motor::command_stop
-                0x0001f918                ev3dev::motor::command_reset
-                0x0001f91c                ev3dev::motor::encoder_polarity_normal
-                0x0001f920                ev3dev::motor::encoder_polarity_inversed
-                0x0001f924                ev3dev::motor::polarity_normal
-                0x0001f928                ev3dev::motor::polarity_inversed
-                0x0001f92c                ev3dev::motor::speed_regulation_on
-                0x0001f930                ev3dev::motor::speed_regulation_off
-                0x0001f934                ev3dev::motor::stop_command_coast
-                0x0001f938                ev3dev::motor::stop_command_brake
-                0x0001f93c                ev3dev::motor::stop_command_hold
-                0x0001f940                ev3dev::dc_motor::command_run_forever
-                0x0001f944                ev3dev::dc_motor::command_run_timed
-                0x0001f948                ev3dev::dc_motor::command_run_direct
-                0x0001f94c                ev3dev::dc_motor::command_stop
-                0x0001f950                ev3dev::dc_motor::polarity_normal
-                0x0001f954                ev3dev::dc_motor::polarity_inversed
-                0x0001f958                ev3dev::dc_motor::stop_command_coast
-                0x0001f95c                ev3dev::dc_motor::stop_command_brake
-                0x0001f960                ev3dev::servo_motor::command_run
-                0x0001f964                ev3dev::servo_motor::command_float
-                0x0001f968                ev3dev::servo_motor::polarity_normal
-                0x0001f96c                ev3dev::servo_motor::polarity_inversed
-                0x0001f970                ev3dev::led::left
-                0x0001f97c                ev3dev::led::right
-                0x0001f988                ev3dev::led::red
-                0x0001f994                ev3dev::led::green
-                0x0001f9a0                ev3dev::led::amber
-                0x0001f9ac                ev3dev::led::orange
-                0x0001f9b8                ev3dev::led::yellow
-                0x0001f9c4                ev3dev::power_supply::battery
- .bss           0x0001f9cc       0x2c ./src/main.o
- .bss           0x0001f9f8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
- .bss           0x0001f9f8        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
- .bss           0x0001f9f8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
- .bss           0x0001f9f8        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
+ .bss           0x00021694        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crt1.o
+ .bss           0x00021694        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crti.o
+ .bss           0x00021694        0x1 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtbegin.o
+ *fill*         0x00021695        0x3 
+ .bss           0x00021698      0x108 ./src/Control.o
+ .bss           0x000217a0      0x3b8 ./src/ev3dev.o
+                0x000217e8                ev3dev::led::red_left
+                0x000217f4                ev3dev::led::red_right
+                0x00021800                ev3dev::led::green_left
+                0x0002180c                ev3dev::led::green_right
+                0x00021820                ev3dev::infrared_sensor::mode_ir_remote
+                0x00021854                ev3dev::button::back
+                0x00021880                ev3dev::button::left
+                0x000218ac                ev3dev::button::right
+                0x000218d8                ev3dev::button::up
+                0x00021904                ev3dev::button::down
+                0x00021930                ev3dev::button::enter
+                0x0002198c                ev3dev::sensor::nxt_i2c_sensor
+                0x00021990                ev3dev::sensor::ev3_touch
+                0x00021994                ev3dev::sensor::nxt_touch
+                0x00021998                ev3dev::sensor::ev3_color
+                0x0002199c                ev3dev::sensor::ev3_ultrasonic
+                0x000219a0                ev3dev::sensor::nxt_ultrasonic
+                0x000219a4                ev3dev::sensor::ev3_gyro
+                0x000219a8                ev3dev::sensor::ev3_infrared
+                0x000219b0                ev3dev::sensor::nxt_light
+                0x000219b4                ev3dev::sensor::nxt_sound
+                0x000219b8                ev3dev::sensor::nxt_analog
+                0x000219bc                ev3dev::motor::motor_medium
+                0x000219c0                ev3dev::motor::motor_large
+                0x00021a2c                ev3dev::touch_sensor::mode_touch
+                0x00021a30                ev3dev::color_sensor::mode_col_reflect
+                0x00021a34                ev3dev::color_sensor::mode_col_ambient
+                0x00021a38                ev3dev::color_sensor::mode_col_color
+                0x00021a3c                ev3dev::color_sensor::mode_ref_raw
+                0x00021a40                ev3dev::color_sensor::mode_rgb_raw
+                0x00021a44                ev3dev::ultrasonic_sensor::mode_us_dist_cm
+                0x00021a48                ev3dev::ultrasonic_sensor::mode_us_dist_in
+                0x00021a4c                ev3dev::ultrasonic_sensor::mode_us_listen
+                0x00021a50                ev3dev::ultrasonic_sensor::mode_us_si_cm
+                0x00021a54                ev3dev::ultrasonic_sensor::mode_us_si_in
+                0x00021a58                ev3dev::gyro_sensor::mode_gyro_ang
+                0x00021a5c                ev3dev::gyro_sensor::mode_gyro_rate
+                0x00021a60                ev3dev::gyro_sensor::mode_gyro_fas
+                0x00021a64                ev3dev::gyro_sensor::mode_gyro_g_a
+                0x00021a68                ev3dev::gyro_sensor::mode_gyro_cal
+                0x00021a6c                ev3dev::infrared_sensor::mode_ir_prox
+                0x00021a70                ev3dev::infrared_sensor::mode_ir_seek
+                0x00021a74                ev3dev::infrared_sensor::mode_ir_rem_a
+                0x00021a78                ev3dev::infrared_sensor::mode_ir_cal
+                0x00021a7c                ev3dev::sound_sensor::mode_db
+                0x00021a80                ev3dev::sound_sensor::mode_dba
+                0x00021a84                ev3dev::light_sensor::mode_reflect
+                0x00021a88                ev3dev::light_sensor::mode_ambient
+                0x00021a8c                ev3dev::motor::command_run_forever
+                0x00021a90                ev3dev::motor::command_run_to_abs_pos
+                0x00021a94                ev3dev::motor::command_run_to_rel_pos
+                0x00021a98                ev3dev::motor::command_run_timed
+                0x00021a9c                ev3dev::motor::command_run_direct
+                0x00021aa0                ev3dev::motor::command_stop
+                0x00021aa4                ev3dev::motor::command_reset
+                0x00021aa8                ev3dev::motor::encoder_polarity_normal
+                0x00021aac                ev3dev::motor::encoder_polarity_inversed
+                0x00021ab0                ev3dev::motor::polarity_normal
+                0x00021ab4                ev3dev::motor::polarity_inversed
+                0x00021ab8                ev3dev::motor::speed_regulation_on
+                0x00021abc                ev3dev::motor::speed_regulation_off
+                0x00021ac0                ev3dev::motor::stop_command_coast
+                0x00021ac4                ev3dev::motor::stop_command_brake
+                0x00021ac8                ev3dev::motor::stop_command_hold
+                0x00021acc                ev3dev::dc_motor::command_run_forever
+                0x00021ad0                ev3dev::dc_motor::command_run_timed
+                0x00021ad4                ev3dev::dc_motor::command_run_direct
+                0x00021ad8                ev3dev::dc_motor::command_stop
+                0x00021adc                ev3dev::dc_motor::polarity_normal
+                0x00021ae0                ev3dev::dc_motor::polarity_inversed
+                0x00021ae4                ev3dev::dc_motor::stop_command_coast
+                0x00021ae8                ev3dev::dc_motor::stop_command_brake
+                0x00021aec                ev3dev::servo_motor::command_run
+                0x00021af0                ev3dev::servo_motor::command_float
+                0x00021af4                ev3dev::servo_motor::polarity_normal
+                0x00021af8                ev3dev::servo_motor::polarity_inversed
+                0x00021afc                ev3dev::led::left
+                0x00021b08                ev3dev::led::right
+                0x00021b14                ev3dev::led::red
+                0x00021b20                ev3dev::led::green
+                0x00021b2c                ev3dev::led::amber
+                0x00021b38                ev3dev::led::orange
+                0x00021b44                ev3dev::led::yellow
+                0x00021b50                ev3dev::power_supply::battery
+ .bss           0x00021b58      0x104 ./src/main.o
+ .bss           0x00021c5c        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+ .bss           0x00021c5c        0x0 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+ .bss           0x00021c5c        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3/crtend.o
+ .bss           0x00021c5c        0x0 c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr/lib/crtn.o
  *(COMMON)
-                0x0001f9f8                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x0001f9f8                _bss_end__ = .
-                0x0001f9f8                __bss_end__ = .
-                0x0001f9f8                . = ALIGN (0x4)
-                0x0001f9f8                . = SEGMENT_START ("ldata-segment", .)
-                0x0001f9f8                . = ALIGN (0x4)
-                0x0001f9f8                __end__ = .
-                0x0001f9f8                _end = .
-                0x0001f9f8                PROVIDE (end, .)
-                0x0001f9f8                . = DATA_SEGMENT_END (.)
+                0x00021c5c                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00021c5c                _bss_end__ = .
+                0x00021c5c                __bss_end__ = .
+                0x00021c5c                . = ALIGN (0x4)
+                0x00021c5c                . = SEGMENT_START ("ldata-segment", .)
+                0x00021c5c                . = ALIGN (0x4)
+                0x00021c5c                __end__ = .
+                0x00021c5c                _end = .
+                0x00021c5c                PROVIDE (end, .)
+                0x00021c5c                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)
@@ -1415,58 +1454,58 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x230
+.debug_aranges  0x00000000      0x250
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x78 ./src/Control.o
+                0x00000000       0x80 ./src/Control.o
  .debug_aranges
-                0x00000078      0x190 ./src/ev3dev.o
+                0x00000080      0x190 ./src/ev3dev.o
  .debug_aranges
-                0x00000208       0x28 ./src/main.o
+                0x00000210       0x40 ./src/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x6f032
+.debug_info     0x00000000    0x7df3e
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000    0x174f5 ./src/Control.o
- .debug_info    0x000174f5    0x4f784 ./src/ev3dev.o
- .debug_info    0x00066c79     0x83b9 ./src/main.o
+ .debug_info    0x00000000    0x2576e ./src/Control.o
+ .debug_info    0x0002576e    0x4f784 ./src/ev3dev.o
+ .debug_info    0x00074ef2     0x904c ./src/main.o
 
-.debug_abbrev   0x00000000     0x331c
+.debug_abbrev   0x00000000     0x34c1
  *(.debug_abbrev)
- .debug_abbrev  0x00000000     0x1233 ./src/Control.o
- .debug_abbrev  0x00001233     0x14a2 ./src/ev3dev.o
- .debug_abbrev  0x000026d5      0xc47 ./src/main.o
+ .debug_abbrev  0x00000000     0x1339 ./src/Control.o
+ .debug_abbrev  0x00001339     0x14a2 ./src/ev3dev.o
+ .debug_abbrev  0x000027db      0xce6 ./src/main.o
 
-.debug_line     0x00000000     0x73bc
+.debug_line     0x00000000     0x87c8
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000     0x179b ./src/Control.o
- .debug_line    0x0000179b     0x54e9 ./src/ev3dev.o
- .debug_line    0x00006c84      0x738 ./src/main.o
+ .debug_line    0x00000000     0x27c3 ./src/Control.o
+ .debug_line    0x000027c3     0x54e9 ./src/ev3dev.o
+ .debug_line    0x00007cac      0xb1c ./src/main.o
 
-.debug_frame    0x00000000     0x197c
+.debug_frame    0x00000000     0x1cfc
  *(.debug_frame)
- .debug_frame   0x00000000      0x388 ./src/Control.o
- .debug_frame   0x00000388      0xedc ./src/ev3dev.o
- .debug_frame   0x00001264       0x4c ./src/main.o
- .debug_frame   0x000012b0      0x688 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
- .debug_frame   0x00001938       0x44 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
+ .debug_frame   0x00000000      0x6a4 ./src/Control.o
+ .debug_frame   0x000006a4      0xedc ./src/ev3dev.o
+ .debug_frame   0x00001580       0xb0 ./src/main.o
+ .debug_frame   0x00001630      0x688 c:/dev/sourcerycodebenchlitearmlinux/bin/../lib/gcc/arm-none-linux-gnueabi/4.8.3\libgcc.a(linux-atomic.o)
+ .debug_frame   0x00001cb8       0x44 c:\dev\sourcerycodebenchlitearmlinux\bin\../arm-none-linux-gnueabi/libc/usr/lib/libc_nonshared.a(elf-init.oS)
 
-.debug_str      0x00000000    0x3221c
+.debug_str      0x00000000    0x36d8e
  *(.debug_str)
- .debug_str     0x00000000     0xf510 ./src/Control.o
-                              0x10559 (size before relaxing)
- .debug_str     0x0000f510    0x22cad ./src/ev3dev.o
+ .debug_str     0x00000000    0x15ceb ./src/Control.o
+                              0x17c01 (size before relaxing)
+ .debug_str     0x00015ceb    0x21053 ./src/ev3dev.o
                               0x30c52 (size before relaxing)
- .debug_str     0x000321bd       0x5f ./src/main.o
-                               0x69c6 (size before relaxing)
+ .debug_str     0x00036d3e       0x50 ./src/main.o
+                               0x5c86 (size before relaxing)
 
-.debug_loc      0x00000000    0x2c8de
+.debug_loc      0x00000000    0x3675d
  *(.debug_loc)
- .debug_loc     0x00000000     0x8f84 ./src/Control.o
- .debug_loc     0x00008f84    0x23846 ./src/ev3dev.o
- .debug_loc     0x0002c7ca      0x114 ./src/main.o
+ .debug_loc     0x00000000    0x11d48 ./src/Control.o
+ .debug_loc     0x00011d48    0x23846 ./src/ev3dev.o
+ .debug_loc     0x0003558e     0x11cf ./src/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1486,11 +1525,11 @@ LOAD c:/dev/sourcerycodebenchlitearmlinux/bin/../arm-none-linux-gnueabi/libc/usr
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000     0x8af8
+.debug_ranges   0x00000000     0xacf0
  *(.debug_ranges)
- .debug_ranges  0x00000000     0x1ad0 ./src/Control.o
- .debug_ranges  0x00001ad0     0x6fc0 ./src/ev3dev.o
- .debug_ranges  0x00008a90       0x68 ./src/main.o
+ .debug_ranges  0x00000000     0x3558 ./src/Control.o
+ .debug_ranges  0x00003558     0x6fc0 ./src/ev3dev.o
+ .debug_ranges  0x0000a518      0x7d8 ./src/main.o
 
 .debug_macro
  *(.debug_macro)
