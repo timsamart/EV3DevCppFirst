@@ -36,6 +36,15 @@
 //  you should see the motor running and after a few seconds you should see the
 //  readouts of the sonic Sensor in cm
 //    Sonic Sensor Distance: = 9
+//------------------------------------------------------------
+// usefull linux commands:
+// #ps -All //shows all processes
+// # kill [signal or option] PID(s)
+// where signal is:
+// Signal Name			Signal			Behaviour
+// SIGHUP			      1				Hangup
+// SIGKILL			      9				Kill Signal
+// SIGTERM			      15			Terminate
 
 #include "ev3dev.h"
 #include <iostream>
@@ -52,7 +61,8 @@ int main()
 	s.speak("Hello My name is Brick, Lego Brick!",true);
 	c.initialize();
 	std::cout << "Hello ARM World!" << std::endl;
-	c.drive(0,1050,0,5000);
+	//c.drive(0,1050,0,5000);
+	//c.drive(1,1050,0,5000);
 	bool x = true;
 	/*std::thread thj = std::thread([&] {
 		while(x){
@@ -61,8 +71,8 @@ int main()
 			c.sleep(500);
 		};
 	});*/
-	while(!c.e.buttonPressed(ESCAPE)){};
-	c.drive(0,300,2000);
+	//while(!c.e.buttonPressed(ESCAPE)){};
+	//c.drive(0,300,2000);
 	while(!c.e.buttonPressed(ESCAPE)){
 		if(c.e.buttonPressed(LEFT)){
 			c.drive_ToPositionAbsolute(0, 50);

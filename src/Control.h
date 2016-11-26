@@ -33,6 +33,19 @@
 #include <iostream>
 #include <fstream>
 
+//- FOR NETWORK SUPPORT BEGIN
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <sys/types.h>
+#include <time.h>
+//- FOR NETWORK SUPPORT END
+
 #ifndef NO_LINUX_HEADERS
 #include <unistd.h>
 #include <fcntl.h>
@@ -60,6 +73,7 @@ public:
 	std::thread t_buttons; // thread for getting button inputs
 	std::thread t_sensors; // thread for reading value of sensor
 	std::thread t_motors; // thread for reading motors values
+	std::thread t_network; // thread for network socket
 
 	void initialize(bool verbose = false, int ms = 1000);
 
@@ -86,6 +100,7 @@ private:
 	void th_initSensorInput(int ms = 500); // thread to get sensor inputs
 	void th_motorReadStatus(int ID); // reads motor Status to events
 	void th_sensorRead(int ID); // couts sensor readings from another sensor
+	void th_initNetwork(); // thread to communicate over the network
 
 
 protected:

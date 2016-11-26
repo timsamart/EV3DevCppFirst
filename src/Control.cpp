@@ -65,6 +65,8 @@ void Control::exit()
 	intercom::msg("sensor thread terminated!");
 	t_motors.join();
 	intercom::msg("motor thread terminated!");
+	t_network.join();
+	intercom::msg("Network thread terminated!");
 	stopAll();
 	intercom::msg("motors stopped!");
 }
@@ -81,6 +83,7 @@ void Control::initialize(bool _verbose, int ms)
 	th_initButtonInput();
 	th_initSensorInput(ms);
 	th_initMotorStatus(ms);
+	th_initNetwork();
 }
 
 void Control::drive(int ID, int speed, int timeinms, int rampupdownms)
@@ -274,5 +277,37 @@ void Control::th_initButtonInput(int ms)
 		}
 	});
 	//tbutton.join();
+}
+
+void Control::th_initNetwork()
+{
+	std::cout << "Start button input thread... " << std::endl;
+	t_network = std::thread([&] {
+		int listenfd = 0, connfd = 0;
+	    struct sockaddr_in serv_addr;
+	    char sendBuff[1025];
+	    time_t ticks;
+		listenfd = socket(AF_INET, SOCK_STREAM, 0);
+		memset(&serv_addr, '0', sizeof(serv_addr));
+		memset(sendBuff, '0', sizeof(sendBuff));
+
+		serv_addr.sin_family = AF_INET;
+		serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+		serv_addr.sin_port = htons(5000);
+	    bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
+	    listen(listenfd, 10);
+	    while(1)
+	    {
+	    	connfd = accept(listenfd, (struct sockaddr*)NULL, NULL);
+
+	    	//ticks = time(NULL);
+		    //snprintf(sendBuff, sizeof(sendBuff), "%.24s\r\n", ctime(&ticks));
+	    	snprintf(sendBuff, sizeof(sendBuff), "Hello and Welcome!");
+		    write(connfd, sendBuff, strlen(sendBuff));
+
+		    close(connfd);
+		    sleep(1);
+	    }
+	});
 }
 } /* namespace ev3dev */
